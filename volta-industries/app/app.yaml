@@ -32,6 +32,14 @@ env:
   - name: NODE_ENV
     value: production
 
+  # Route the agent's model calls through the Unity AI Gateway. Appended to the
+  # workspace URL to form the OpenAI client baseURL (the SDK adds /responses):
+  # https://<host>/ai-gateway/openai/v1/responses. Unset → `serving-endpoints`
+  # (Foundation Models). The model name is composed in config/app.json from
+  # DEMO_CATALOG → dfurg_febar_catalog.app.unity-gateway-model.
+  - name: AGENT_BASE_PATH
+    value: "ai-gateway/openai/v1"
+
   # ── Binding-derived ─────────────────────────────────────────────────
   # AppKit's ResourceRegistry expects DATABRICKS_WAREHOUSE_ID and the
   # standard PG* vars from the postgres binding (PGHOST/PGDATABASE/PGUSER
