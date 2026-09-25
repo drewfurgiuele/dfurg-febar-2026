@@ -1,0 +1,137 @@
+{
+  "version": 2,
+  "instructions": {
+    "text_instructions": [
+      {
+        "id": "743d27e5ab4c4e3d997b813b6eef6545",
+        "content": [
+          "You analyze Volta Industrial plant-floor data for Sam Ortiz (VP Manufacturing Operations, non-technical). CONTEXT: A high-utilization run ~3 weeks ago wore ~90 critical lines toward failure - rising vibration/temperature, open corrective work orders, parts needing expediting. Unplanned downtime costs ~$22K/hour. BASELINES: Healthy line failure_risk_score ~0.03-0.2. risk_band: 'critical' (>=0.75 with open corrective), 'elevated' (>=0.6), 'watch' (>=0.4), 'healthy'. The part_local flag is the key lever: expedite only nets positive when the part is LOCAL. For high-risk, NON-local-part lines (like LINE-0004 at PLANT-03), pull_now wins. HEADLINE NUMBERS always come from the mv_line_risk metric view: downtime exposure = MEASURE(downtime_exposure), open work orders = MEASURE(open_work_orders), critical lines = MEASURE(critical_count), at-risk = MEASURE(atrisk_count). The hero line id is LINE-0004."
+        ]
+      }
+    ],
+    "example_question_sqls": [
+      {
+        "id": "28fb7406bddc4eb2b4ce116511e81964",
+        "question": [
+          "Across all at-risk lines, how much downtime cost could we avoid, and by which action?"
+        ],
+        "sql": [
+          "SELECT recommended_action, ROUND(SUM(predicted_downtime_cost_avoided_usd)) AS total_avoided_usd, COUNT(*) AS lines FROM dfurg_febar_catalog.volta_industrial.gold_maintenance_recommendations GROUP BY recommended_action ORDER BY total_avoided_usd DESC"
+        ]
+      },
+      {
+        "id": "6a44589be7e748aabaead92ec4b404fc",
+        "question": [
+          "LINE-0004 is trending toward a stop - how bad is it and is the part in stock?"
+        ],
+        "sql": [
+          "SELECT line_id, failure_risk_score, risk_band, part_local, candidate_part_id, part_lead_time_days FROM dfurg_febar_catalog.volta_industrial.gold_open_atrisk WHERE line_id = 'LINE-0004'"
+        ]
+      },
+      {
+        "id": "7e6c141998c8402a8cd28b606946a08c",
+        "question": [
+          "What's our downtime exposure right now, and how many open work orders?"
+        ],
+        "sql": [
+          "SELECT MEASURE(downtime_exposure) AS downtime_exposure_usd, MEASURE(open_work_orders) AS open_work_orders FROM dfurg_febar_catalog.volta_industrial.mv_line_risk"
+        ]
+      },
+      {
+        "id": "c211969b3d6e4eccb0db981444a9195e",
+        "question": [
+          "Which lines are best served by expediting the part instead of pulling?"
+        ],
+        "sql": [
+          "SELECT r.line_id, a.plant_id, r.predicted_net_value_usd FROM dfurg_febar_catalog.volta_industrial.gold_maintenance_recommendations r JOIN dfurg_febar_catalog.volta_industrial.gold_open_atrisk a USING (line_id) WHERE r.recommended_action = 'expedite_parts_and_run' ORDER BY r.predicted_net_value_usd DESC"
+        ]
+      },
+      {
+        "id": "d71f8ca712974f7682103124c730a9bd",
+        "question": [
+          "Should we pull LINE-0004 now or run it to the end of the shift?"
+        ],
+        "sql": [
+          "SELECT recommended_action, predicted_downtime_cost_avoided_usd, predicted_net_value_usd, action_ranking FROM dfurg_febar_catalog.volta_industrial.gold_maintenance_recommendations WHERE line_id = 'LINE-0004'"
+        ]
+      },
+      {
+        "id": "dda64bbf650e4d6bb2dd5dfaea4c3eda",
+        "question": [
+          "Which plants is the failure risk concentrated in?"
+        ],
+        "sql": [
+          "SELECT plant_id, MEASURE(atrisk_count) AS atrisk FROM dfurg_febar_catalog.volta_industrial.mv_line_risk GROUP BY plant_id ORDER BY atrisk DESC"
+        ]
+      }
+    ]
+  },
+  "data_sources": {
+    "tables": [
+      {
+        "identifier": "dfurg_febar_catalog.volta_industrial.gold_line_status"
+      },
+      {
+        "identifier": "dfurg_febar_catalog.volta_industrial.gold_maintenance_recommendations"
+      },
+      {
+        "identifier": "dfurg_febar_catalog.volta_industrial.gold_open_atrisk"
+      },
+      {
+        "identifier": "dfurg_febar_catalog.volta_industrial.mv_line_risk"
+      },
+      {
+        "identifier": "dfurg_febar_catalog.volta_industrial.raw_lines"
+      },
+      {
+        "identifier": "dfurg_febar_catalog.volta_industrial.raw_parts"
+      }
+    ]
+  },
+  "config": {
+    "sample_questions": [
+      {
+        "id": "09dc9629efdd4d78ae9c3a3526df12ae",
+        "question": [
+          "Should we pull LINE-0004 now or run it to the end of the shift?"
+        ]
+      },
+      {
+        "id": "0bc4c3a3545b420680f7010e26600dba",
+        "question": [
+          "LINE-0004 is trending toward a stop - how bad is it and is the part in stock?"
+        ]
+      },
+      {
+        "id": "30ee298b237f4f2ea1ce204da543893e",
+        "question": [
+          "Which lines are best served by expediting the part instead of pulling?"
+        ]
+      },
+      {
+        "id": "4ca53f195d614cfaaf9eeea075881d91",
+        "question": [
+          "What's our downtime exposure right now, and how many open work orders?"
+        ]
+      },
+      {
+        "id": "5c23af407aba428d9f500124bd6f3094",
+        "question": [
+          "Across all at-risk lines, how much downtime cost could we avoid, and by which action?"
+        ]
+      },
+      {
+        "id": "5ddec1032d8f4d7ab6cf1a70788cc12e",
+        "question": [
+          "Which plants is the failure risk concentrated in?"
+        ]
+      },
+      {
+        "id": "aa0027cdb22241b49c47bf776faeaf82",
+        "question": [
+          "What do these at-risk lines have in common?"
+        ]
+      }
+    ]
+  }
+}

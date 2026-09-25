@@ -21,5 +21,23 @@
       "genie-code"
     ]
   },
-  "created_resources": {}
+  "created_resources": {
+    "catalog": "dfurg_febar_catalog",
+    "schema": "volta_industrial",
+    "raw_volume": "/Volumes/dfurg_febar_catalog/volta_industrial/raw_data",
+    "pipeline_id": "636ad93c-bfde-4b5e-a2f5-6b253e9ceffa",
+    "pipeline_name": "volta_plant_floor",
+    "metric_view": "dfurg_febar_catalog.volta_industrial.mv_line_risk",
+    "warehouse_id": "438700776c7de38c",
+    "gold_tables": [
+      "dfurg_febar_catalog.volta_industrial.gold_line_status",
+      "dfurg_febar_catalog.volta_industrial.gold_open_atrisk",
+      "dfurg_febar_catalog.volta_industrial.gold_maintenance_outcomes",
+      "dfurg_febar_catalog.volta_industrial.gold_maintenance_recommendations"
+    ],
+    "dashboard_id": "01f1b8e2276119a996fd855c1c89828d",
+    "dashboard_name": "Volta Plant Floor",
+    "genie_space_id": "01f1b8e278181c04accc3f3ebce92d22",
+    "genie_space_name": "Volta Plant Floor"
+  }
 }

@@ -44,6 +44,23 @@ resources:
       volume_type: MANAGED
       comment: "Raw parquet landing zone — generate_data.py writes here; the SDP silver you build reads it via read_files()."
 
+  pipelines:
+    volta_plant_floor:
+      name: "volta_plant_floor"
+      catalog: ${var.catalog}
+      schema: ${resources.schemas.demo_schema.name}
+      serverless: true
+      photon: true
+      channel: CURRENT
+      configuration:
+        catalog: ${var.catalog}
+        schema: ${var.schema}
+      libraries:
+        - file:
+            path: ./transformation/01_silver.sql
+        - file:
+            path: ./transformation/02_gold.sql
+
   jobs:
     volta_setup:
       name: "[Workshop] Volta Industrial — generate data"
@@ -59,6 +76,7 @@ resources:
       environments:
         - environment_key: sdk_default
           spec:
+            environment_version: "3"
             dependencies:
               - numpy
               - pandas
@@ -70,3 +88,5 @@ targets:
     default: true
   prod:
     mode: production
+    workspace:
+      root_path: /Workspace/Users/${workspace.current_user.userName}/.bundle/${bundle.name}/${bundle.target}
