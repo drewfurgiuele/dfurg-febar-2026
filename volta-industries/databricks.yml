@@ -1,0 +1,27 @@
+# Declarative Automation Bundle configuration, more info here: https://docs.databricks.com/en/dev-tools/bundles/settings.html
+bundle:
+  name: "volta-industries"
+
+include:
+  - resources/*.yml
+  - resources/*/*.yml
+
+targets:
+  # The 'dev' target, for development purposes. This target is the default.
+  dev:
+    mode: development
+    default: true
+    workspace:
+      host: https://fevm-dfurg-febar.cloud.databricks.com
+
+  # The 'prod' target, used for production deployment.
+  prod:
+    mode: production
+    workspace:
+      host: https://fevm-dfurg-febar.cloud.databricks.com
+      # We always use /Users/drew.furgiuele@databricks.com for all resources to make sure we only have a single copy.
+      root_path: /Users/drew.furgiuele@databricks.com/.bundle/${bundle.name}/${bundle.target}
+    run_as:
+      # This runs as drew.furgiuele@databricks.com in production. We could also use a service principal here,
+      # see https://docs.databricks.com/dev-tools/bundles/permissions.html.
+      user_name: drew.furgiuele@databricks.com
