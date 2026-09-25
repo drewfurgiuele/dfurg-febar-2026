@@ -7,9 +7,14 @@ declare module "@databricks/appkit-ui/react" {
   interface QueryRegistry {
     daily_refund_trend: {
         name: "daily_refund_trend";
-        parameters: Record<string, never>;
+        parameters: {
+          /** STRING - use sql.string() */
+          catalog: SQLStringMarker;
+          /** STRING - use sql.string() */
+          schema: SQLStringMarker;
+        };
         result: Array<{
-          /** @sqlType TIMESTAMP */
+          /** @sqlType DATE */
           return_date: string;
           /** @sqlType DOUBLE */
           total_refund_usd: number;
@@ -17,7 +22,12 @@ declare module "@databricks/appkit-ui/react" {
       };
     returns_by_product: {
         name: "returns_by_product";
-        parameters: Record<string, never>;
+        parameters: {
+          /** STRING - use sql.string() */
+          catalog: SQLStringMarker;
+          /** STRING - use sql.string() */
+          schema: SQLStringMarker;
+        };
         result: Array<{
           /** @sqlType STRING */
           product_name: string;
@@ -29,7 +39,12 @@ declare module "@databricks/appkit-ui/react" {
       };
     worst_lots: {
         name: "worst_lots";
-        parameters: Record<string, never>;
+        parameters: {
+          /** STRING - use sql.string() */
+          catalog: SQLStringMarker;
+          /** STRING - use sql.string() */
+          schema: SQLStringMarker;
+        };
         result: Array<{
           /** @sqlType STRING */
           lot_id: string;

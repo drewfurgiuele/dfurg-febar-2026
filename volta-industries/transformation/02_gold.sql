@@ -32,6 +32,7 @@ joined AS (
     cr.criticality,
     cr.plant_lat,
     cr.plant_lng,
+    cr.snapshot_date,
     t.vibration_rms,
     t.temperature_c,
     t.utilization_pct,
@@ -50,7 +51,24 @@ joined AS (
     ON w.candidate_part_id = p.part_id
 )
 SELECT
+  -- id / plant_name / region / current_status / last_check_at feed the app's Lakebase mirror
+  -- contract (server/db/sync.ts). current_status maps the 4-band model onto the app's 3 states.
+  concat(line_id, ':', plant_id) AS id,
   line_id, plant_id, line_name, machine_type, criticality, plant_lat, plant_lng,
+  CASE plant_id
+    WHEN 'PLANT-01' THEN 'Detroit'    WHEN 'PLANT-02' THEN 'Pittsburgh'
+    WHEN 'PLANT-03' THEN 'Columbus'   WHEN 'PLANT-04' THEN 'Milwaukee'
+    WHEN 'PLANT-05' THEN 'Charlotte'  WHEN 'PLANT-06' THEN 'Dallas'
+    WHEN 'PLANT-07' THEN 'Phoenix'    WHEN 'PLANT-08' THEN 'Portland'
+    ELSE plant_id
+  END AS plant_name,
+  CASE plant_id
+    WHEN 'PLANT-01' THEN 'Michigan'       WHEN 'PLANT-02' THEN 'Pennsylvania'
+    WHEN 'PLANT-03' THEN 'Ohio'           WHEN 'PLANT-04' THEN 'Wisconsin'
+    WHEN 'PLANT-05' THEN 'North Carolina' WHEN 'PLANT-06' THEN 'Texas'
+    WHEN 'PLANT-07' THEN 'Arizona'        WHEN 'PLANT-08' THEN 'Oregon'
+    ELSE NULL
+  END AS region,
   vibration_rms, temperature_c, utilization_pct,
   failure_risk_score, open_wo_count, has_open_corrective,
   -- part_local: is the needed part stocked locally? No needed part -> not a constraint (true).
@@ -66,7 +84,14 @@ SELECT
     WHEN failure_risk_score >= 0.6  THEN 'elevated'
     WHEN failure_risk_score >= 0.4  THEN 'watch'
     ELSE 'healthy'
-  END AS risk_band
+  END AS risk_band,
+  -- current_status: the app mirror's 3-state enum (healthy / at_risk / critical).
+  CASE
+    WHEN failure_risk_score >= 0.75 AND has_open_corrective THEN 'critical'
+    WHEN failure_risk_score >= 0.4  THEN 'at_risk'
+    ELSE 'healthy'
+  END AS current_status,
+  CAST(snapshot_date AS TIMESTAMP) AS last_check_at
 FROM joined;
 
 -- gold_open_atrisk — at-risk lines + parts context. Model scoring input AND the app's floor queue.
@@ -149,6 +174,11 @@ SELECT
     WHEN 'pull_now' THEN pull_avoided
     WHEN 'expedite_parts_and_run' THEN exp_avoided
     ELSE run_avoided END, 2) AS predicted_downtime_cost_avoided_usd,
+  -- alias the app's Lakebase mirror expects (server/db/sync.ts selects predicted_downtime_cost_usd)
+  ROUND(CASE recommended_action
+    WHEN 'pull_now' THEN pull_avoided
+    WHEN 'expedite_parts_and_run' THEN exp_avoided
+    ELSE run_avoided END, 2) AS predicted_downtime_cost_usd,
   ROUND(CASE recommended_action
     WHEN 'pull_now' THEN pull_net
     WHEN 'expedite_parts_and_run' THEN exp_net

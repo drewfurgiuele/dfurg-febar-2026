@@ -80,6 +80,7 @@ import { registerChatRoutes } from './routes/chat.js';
 import { registerAdminRoutes } from './routes/admin.js';
 import { registerChartRoutes } from './routes/charts.js';
 import { registerDevLogRoutes } from './routes/dev-log.js';
+import { registerReturnsRoutes, registerActivityRoutes } from './routes/returns.js';
 
 // ============================================================================
 // Config
@@ -493,8 +494,8 @@ await createApp({
   // Legacy returns/activity routes — not used in Volta Plant Floor demo.
   // Trainees build domain-specific routes as needed. Stub imports kept to prevent
   // accidental use; registrations commented out.
-  // registerReturnsRoutes(app, { db });
-  // registerActivityRoutes(app, { db });
+  registerReturnsRoutes(app, { db });
+  registerActivityRoutes(app, { db });
   registerAdminRoutes(app, { db, data: appConfig.data });
 
   // Analytics charts — custom route that substitutes catalog/schema into the

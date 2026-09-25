@@ -45,6 +45,13 @@ import * as mlflow from 'mlflow-tracing';
 import { z } from 'zod';
 import { authHeaders } from '../lib/auth.js';
 import type { AppDb } from '../db/index.js';
+import {
+  worstAtriskLine,
+  getLineStatus,
+  getRecommendation,
+  searchParts as searchPartsQuery,
+  recordMaintenanceAction,
+} from '../db/queries/maintenance.js';
 // Data-backend helpers. Both are config-driven and share the same
 // DataCallResult shape + ToolProgressEvent stream, so the `ask_data` tool
 // below can delegate to EITHER without the UI caring which powers it. This
@@ -145,11 +152,33 @@ function makeTools(ctx: AgentContext): Tool[] {
         .nullable()
         .describe('Plant id, e.g. PLANT-03. Null if line_id is also null.'),
     }),
-    execute: async () => {
-      throw new Error(
-        'Not implemented — this is your Build 2 Assist task; see APP_WORKSHOP.md',
-      );
-    },
+    execute: async ({ line_id, plant_id }) =>
+      mlflow.withSpan(
+        async () => {
+          // Named line → its status; else the worst at-risk line, then its status.
+          const worst = line_id ? null : await worstAtriskLine(ctx.db);
+          const targetId = line_id ?? worst?.lineId ?? null;
+          const line = targetId ? await getLineStatus(ctx.db, targetId) : null;
+          if (!line) return { found: false };
+          return {
+            line_id: line.lineId,
+            plant_id: line.plantId,
+            line_name: line.lineName,
+            plant_name: line.plantName,
+            failure_risk_score: line.failureRiskScore,
+            downtime_exposure_usd: line.downtimeExposureUsd,
+            current_status: line.currentStatus,
+            part_local: line.partLocal,
+            candidate_part_id: line.partId,
+            part_lead_time_days: line.partLeadTimeDays,
+          };
+        },
+        {
+          name: 'find_atrisk_line',
+          spanType: mlflow.SpanType.TOOL,
+          inputs: { line_id, plant_id },
+        },
+      ),
   });
 
   // ── rank_maintenance_actions — TRAINEE BUILDS (Build 2 · Assist). STUB. ───
@@ -167,11 +196,34 @@ function makeTools(ctx: AgentContext): Tool[] {
     parameters: z.object({
       line_id: z.string().describe('Line id, e.g. LINE-04.'),
     }),
-    execute: async () => {
-      throw new Error(
-        'Not implemented — this is your Build 2 Assist task; see APP_WORKSHOP.md',
-      );
-    },
+    execute: async ({ line_id }) =>
+      mlflow.withSpan(
+        async () => {
+          const rec = await getRecommendation(ctx.db, line_id);
+          if (!rec) {
+            return {
+              scored: false,
+              note: 'No maintenance recommendation yet — build + score the maintenance model (Build 2 ML step), then reset the demo.',
+            };
+          }
+          return {
+            line_id: rec.lineId,
+            recommended_action: rec.recommendedAction,
+            predicted_downtime_cost_usd: rec.predictedDowntimeCostUsd,
+            action_ranking: rec.actionRanking.map((o) => ({
+              action: o.action,
+              predicted_downtime_cost_avoided_usd: o.predictedCostAvoided,
+              estimated_net_value_usd: o.netValue,
+              cost_usd: o.costUsd,
+            })),
+          };
+        },
+        {
+          name: 'rank_maintenance_actions',
+          spanType: mlflow.SpanType.TOOL,
+          inputs: { line_id },
+        },
+      ),
   });
 
   // ── search_parts — TRAINEE BUILDS (Build 2c · Search). STUB. ──────────────
@@ -186,11 +238,26 @@ function makeTools(ctx: AgentContext): Tool[] {
         .string()
         .describe('Free-text search query, e.g. "bearing seal 40mm" or "hydraulic pump".'),
     }),
-    execute: async () => {
-      throw new Error(
-        'Not implemented — this is your Build 2c Search task; see APP_WORKSHOP.md',
-      );
-    },
+    execute: async ({ query }) =>
+      mlflow.withSpan(
+        async () => {
+          const matches = await searchPartsQuery(ctx.db, query);
+          if (!matches.length) {
+            return { matches_found: false, note: 'No matching parts found.' };
+          }
+          return {
+            matches_found: true,
+            candidates: matches.map((m) => ({
+              part_id: m.partId,
+              part_name: m.partName,
+              part_category: m.partCategory,
+              part_local: m.partLocal,
+              lead_time_days: m.leadTimeDays,
+            })),
+          };
+        },
+        { name: 'search_parts', spanType: mlflow.SpanType.TOOL, inputs: { query } },
+      ),
   });
 
   // ── execute_maintenance_action — TRAINEE BUILDS (Build 3 · Act). STUB. ────
@@ -223,11 +290,37 @@ function makeTools(ctx: AgentContext): Tool[] {
         .nullable()
         .describe('Predicted $ of downtime cost avoided by this action.'),
     }),
-    execute: async () => {
-      throw new Error(
-        'Not implemented — this is your Build 3 Act task; see APP_WORKSHOP.md',
-      );
-    },
+    execute: async ({
+      line_id,
+      action_type,
+      part_id,
+      drafted_work_order,
+      predicted_downtime_cost_avoided_usd,
+    }) =>
+      mlflow.withSpan(
+        async () => {
+          const { actionId } = await recordMaintenanceAction(ctx.db, {
+            lineId: line_id,
+            actionType: action_type,
+            partId: part_id,
+            draftedWo: drafted_work_order,
+            predictedDowntimeCostAvoidsUsd: predicted_downtime_cost_avoided_usd,
+            userEmail: ctx.userEmail,
+          });
+          return {
+            recorded: true,
+            action_id: actionId,
+            line_id,
+            action_type,
+            predicted_downtime_cost_avoided_usd,
+          };
+        },
+        {
+          name: 'execute_maintenance_action',
+          spanType: mlflow.SpanType.TOOL,
+          inputs: { line_id, action_type, part_id },
+        },
+      ),
   });
 
   // Config-driven data-backend tool registration. Register ONLY when a backend

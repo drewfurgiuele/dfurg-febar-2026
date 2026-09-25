@@ -1,0 +1,16 @@
+# Local env + secrets — never commit
+.env
+.env.*
+!.env.example
+
+# Dependencies / build output
+node_modules/
+dist/
+client/dist/
+
+# Drizzle migrations are regenerated from schema.ts at build time
+drizzle/
+
+# Runtime artifacts
+.preview.pgid
+.DS_Store
