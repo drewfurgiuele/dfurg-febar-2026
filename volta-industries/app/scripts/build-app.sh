@@ -38,7 +38,10 @@ echo "[build-app] generating Drizzle migrations (db:generate)…"
 npm run db:generate
 
 echo "[build-app] building server + client…"
-npm run build:source
+# Build explicitly (NOT `npm run build` — that's a deliberate no-op so the Apps
+# container doesn't rebuild). build:all = build:client (vite → client/dist/) &&
+# build:source (tsdown → dist/).
+npm run build:all
 
 # Rewrite ANY Databricks npm-proxy URL → public registry, in place. The App
 # container can't reach the internal proxy, and different dev environments pin

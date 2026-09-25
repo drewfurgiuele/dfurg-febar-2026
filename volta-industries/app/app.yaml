@@ -14,7 +14,10 @@
 #      scripts/build-app.sh and dist/ ships via DAB sync.include).
 #   3. The `command:` below starts the server.
 
-command: ['node', '--env-file-if-exists=.env', 'dist/server.js']
+# Deployed container uses the env below + platform-injected vars + resource
+# bindings only. Do NOT load .env here — that is local-dev config (human PGUSER,
+# personal MLflow path) and start.sh handles it for local runs.
+command: ['node', 'dist/server.js']
 
 # Scopes minted into the user's OBO token (x-forwarded-access-token).
 user_authorization:
@@ -39,6 +42,22 @@ env:
   # DEMO_CATALOG → dfurg_febar_catalog.app.unity-gateway-model.
   - name: AGENT_BASE_PATH
     value: "ai-gateway/openai/v1"
+
+  # ── Resolved resource IDs (config/app.json placeholders) ────────────
+  # Baked in directly because Volta's setup job has no export_resources task
+  # for finalize_app.sh to harvest — every value is known (see resources.json).
+  # AGENT_MLFLOW_EXPERIMENT_PATH is intentionally omitted so the app self-derives
+  # an SP-writable path at boot (a /Users/<human> path would fail for the SP).
+  - name: DEMO_CATALOG
+    value: "dfurg_febar_catalog"
+  - name: DEMO_SCHEMA
+    value: "volta_industrial"
+  - name: GENIE_SPACE_ID
+    value: "01f1b8e278181c04accc3f3ebce92d22"
+  - name: DASHBOARD_ID
+    value: "01f1b8e2276119a996fd855c1c89828d"
+  - name: PIPELINE_ID
+    value: "636ad93c-bfde-4b5e-a2f5-6b253e9ceffa"
 
   # ── Binding-derived ─────────────────────────────────────────────────
   # AppKit's ResourceRegistry expects DATABRICKS_WAREHOUSE_ID and the

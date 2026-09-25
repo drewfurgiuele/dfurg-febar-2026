@@ -8,7 +8,8 @@
   },
   "scripts": {
     "dev": "NODE_ENV=development tsx watch --env-file-if-exists=.env server/server.ts",
-    "build": "npm run build:client && npm run build:source",
+    "build": "echo '[build] no-op — dist/ and client/dist/ are built locally by scripts/build-app.sh and shipped in the deploy upload; the Apps container must not rebuild'",
+    "build:all": "npm run build:client && npm run build:source",
     "build:client": "vite build --config client/vite.config.ts",
     "build:source": "tsdown --config tsdown.server.config.ts",
     "db:generate": "drizzle-kit generate",
