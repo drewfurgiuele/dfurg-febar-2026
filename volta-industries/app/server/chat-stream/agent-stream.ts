@@ -59,6 +59,9 @@ export async function streamAgentTurn(args: {
   genieSpaceId: string;
   databricksHost: string;
   model: string;
+  /** Path segment after the workspace URL for the OpenAI client baseURL
+   * (SDK appends /responses); empty/undefined → `serving-endpoints`. */
+  agentBasePath?: string;
   messages: Msg[];
   /** Threaded into the Agents SDK so we can abort an in-flight run
    *  when the client disconnects (the caller wires this to req.on('close')).
@@ -121,6 +124,7 @@ export async function streamAgentTurn(args: {
       genieSpaceId: args.genieSpaceId,
       databricksHost: args.databricksHost,
       model: args.model,
+      agentBasePath: args.agentBasePath,
       modelError,
       // Forward sub-agent activity from the MAS tool (ask_data) live into
       // the outer Thinking panel. Each event is both persisted into

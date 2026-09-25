@@ -24,10 +24,20 @@
   "masEndpointName": "${MAS_ENDPOINT_NAME:}",
   "genieSpaceId":    "${GENIE_SPACE_ID:}",
 
-  // Agent LLM. Needs the Responses API (openai/v1/responses). databricks-gpt-5-4
-  // is the baseline; a newer GPT endpoint with /responses enabled works too.
-  // Non-Responses models (Claude etc.) 400 BAD_REQUEST.
-  "agentModel": "databricks-gpt-5-4",
+  // Agent LLM. Needs the Responses API (openai/v1/responses). Reuses DEMO_CATALOG
+  // so only the catalog is env-driven; `app.unity-gateway-model` is the Unity AI
+  // Gateway model registered in UC. Resolves to
+  // `dfurg_febar_catalog.app.unity-gateway-model`. To fall back to a Foundation
+  // Model, set this to e.g. `databricks-gpt-5-4` (and agentBasePath to serving-endpoints).
+  "agentModel": "${DEMO_CATALOG}.app.unity-gateway-model",
+
+  // Path segment appended to the workspace URL (reused from DATABRICKS_HOST via
+  // ctx.databricksHost) to form the agent's OpenAI client baseURL; the SDK then
+  // appends /responses. Default `serving-endpoints` = the Foundation Model path
+  // (baseURL .../serving-endpoints → POST .../serving-endpoints/responses).
+  // For the AI Gateway set AGENT_BASE_PATH=ai-gateway/openai/v1
+  // (baseURL .../ai-gateway/openai/v1 → POST .../ai-gateway/openai/v1/responses).
+  "agentBasePath": "${AGENT_BASE_PATH:serving-endpoints}",
 
   // MLflow trace path. Empty → chat shows "Trace pending…". Auto-created
   // at boot via lib/mlflow.ts.

@@ -83,6 +83,11 @@ export type AgentContext = {
   genieSpaceId: string;
   databricksHost: string;
   model: string;
+  /** Path segment appended to `databricksHost` to form the OpenAI client
+   * baseURL (the SDK then appends /responses). Empty/undefined →
+   * `serving-endpoints`. Set (env AGENT_BASE_PATH) to e.g.
+   * `ai-gateway/openai/v1` to route through the AI Gateway. */
+  agentBasePath?: string;
   /** Called by long-running tools to surface progress to the UI. */
   onToolProgress?: (ev: import('./tools/types.js').ToolProgressEvent) => void;
   /** Mutated by the OpenAI fetch shim on any non-2xx. */
@@ -380,7 +385,11 @@ export async function configureAgentsSdk(ctx: AgentContext): Promise<void> {
   // ──────────────────────────────────────────────────────────────────
   const client = new OpenAI({
     apiKey: bearer,
-    baseURL: `${ctx.databricksHost}/serving-endpoints`,
+    // Compose baseURL = <workspace URL>/<static path>. The workspace URL is
+    // reused from DATABRICKS_HOST (ctx.databricksHost); the path defaults to
+    // `serving-endpoints` (Foundation Models) or e.g. `ai-gateway/openai/v1`
+    // (AI Gateway). The OpenAI SDK appends `/responses` to whatever we set.
+    baseURL: `${ctx.databricksHost}/${(ctx.agentBasePath?.trim() || 'serving-endpoints').replace(/^\/+|\/+$/g, '')}`,
     maxRetries: 4,
     fetch: async (input, init) => {
       const headers = new Headers(init?.headers);

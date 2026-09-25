@@ -28,6 +28,10 @@ type Deps = {
     masEndpointName: string;
     genieSpaceId: string;
     agentModel?: string;
+    /** Path segment after the workspace URL for the agent's OpenAI client
+     * baseURL (SDK appends /responses); empty → `serving-endpoints`. See
+     * plantfloor.ts. */
+    agentBasePath?: string;
   };
 };
 

@@ -120,6 +120,11 @@ type AppConfig = {
    * too. See `lib/mlflow.ts` for the bootstrap. */
   agentMlflowExperimentPath?: string;
   agentModel?: string;
+  /** Path segment appended to the workspace URL (ctx.databricksHost) to form
+   * the agent's OpenAI client baseURL; the SDK then appends /responses.
+   * Empty → `serving-endpoints`. Set (env AGENT_BASE_PATH) to e.g.
+   * `ai-gateway/openai/v1` to route through the AI Gateway. */
+  agentBasePath?: string;
   dashboardId: string;
   /** Workspace resource ids/paths surfaced by /api/resources. Leave any
    * field empty to mark the corresponding tile inert (no deep-link).
@@ -179,6 +184,7 @@ const appConfigSchema = z
     mlflowExperimentId: z.string().optional(),
     agentMlflowExperimentPath: z.string().optional(),
     agentModel: z.string().optional(),
+    agentBasePath: z.string().optional(),
     dashboardId: z.string(),
     pipelineId: z.string().optional(),
     warehouseId: z.string().optional(),
@@ -489,6 +495,7 @@ await createApp({
       masEndpointName: appConfig.masEndpointName ?? '',
       genieSpaceId: appConfig.genieSpaceId ?? '',
       agentModel: appConfig.agentModel,
+      agentBasePath: appConfig.agentBasePath,
     },
   });
   // Legacy returns/activity routes — not used in Volta Plant Floor demo.

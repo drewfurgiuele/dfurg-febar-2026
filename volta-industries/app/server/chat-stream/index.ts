@@ -16,6 +16,9 @@ type ChatConfig = {
   masEndpointName: string;
   genieSpaceId: string;
   agentModel?: string;
+  /** Path segment after the workspace URL for the agent's OpenAI client
+   * baseURL (SDK appends /responses); empty → `serving-endpoints`. */
+  agentBasePath?: string;
 };
 
 /**
@@ -188,6 +191,8 @@ export async function handleChatStream(args: {
       // works too. Claude/non-Responses models 400 BAD_REQUEST on that route. Use
       // the EXACT endpoint name from Serving → Foundation Models; never abbreviate.
       model: config.agentModel ?? 'databricks-gpt-5-4',
+      // Empty/unset → plantfloor.ts composes `${host}/serving-endpoints`.
+      agentBasePath: config.agentBasePath,
       messages: cleanMessages,
       signal: turnAbort.signal,
     });
