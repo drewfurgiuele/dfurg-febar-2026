@@ -1,0 +1,88 @@
+{
+  // App config (JSONC). Loaded by server/server.ts loadAppConfig.
+  //
+  // ${VAR} / ${VAR:default} placeholders are substituted against process.env
+  // BEFORE JSON parsing. So catalog/schema/resource-IDs live in env (one
+  // source of truth), NOT as literals here — set them in `.env` (local dev +
+  // preview) or via the DAB (deployed; finalize_app.sh writes app.yaml's env).
+  //   - `${VAR}`           → empty string if unset
+  //   - `${VAR:default}`   → `default` if unset
+  // Empty values degrade gracefully (inert deep-link tile / skipped feature);
+  // the app still boots. See server.ts loadAppConfig for the substitution +
+  // the boot warnings.
+  //
+  // CUSTOMIZE per demo: branding, assistantScript, and data.tables names
+  // below. Everything else is env-driven and shouldn't need editing.
+
+  // ─ Agent backend: set ONE (via env). masEndpointName → ask_mas tool.
+  //   genieSpaceId → swap to askGenieTool in server/agent/<name>.ts makeTools.
+  //   Both empty → no data tool → agent can't answer "why" questions.
+  //   Template ships with MAS; for a Genie-only demo set GENIE_SPACE_ID, leave
+  //   MAS_ENDPOINT_NAME empty, and swap ask_mas → askGenieTool in refundops.ts
+  //   makeTools. For both: register both with distinct names + tell the model
+  //   in instructions when to prefer each.
+  "masEndpointName": "${MAS_ENDPOINT_NAME:}",
+  "genieSpaceId":    "${GENIE_SPACE_ID:}",
+
+  // Agent LLM. Needs the Responses API (openai/v1/responses). databricks-gpt-5-4
+  // is the baseline; a newer GPT endpoint with /responses enabled works too.
+  // Non-Responses models (Claude etc.) 400 BAD_REQUEST.
+  "agentModel": "databricks-gpt-5-4",
+
+  // MLflow trace path. Empty → chat shows "Trace pending…". Auto-created
+  // at boot via lib/mlflow.ts.
+  "mlflowExperimentId": "",
+  "agentMlflowExperimentPath": "${AGENT_MLFLOW_EXPERIMENT_PATH:}",
+
+  // Embedded AI/BI dashboard (UUID). Empty → drop the /dashboard route +
+  // sidebar entry. Also a tile on /platform.
+  "dashboardId": "${DASHBOARD_ID:}",
+
+  // Workspace resource IDs → deep-link URLs via /api/resources (PlatformDiagram
+  // on /platform). Empty id → tile renders inert.
+  "pipelineId":        "${PIPELINE_ID:}",
+  "warehouseId":       "${WAREHOUSE_ID:}",
+  "kaEndpointName":    "${KA_ENDPOINT_NAME:}",
+  "lakebaseProjectId": "${LAKEBASE_PROJECT_ID:}",
+  "appUrl":            "${APP_URL:}",
+  "mlModelName":       "${DEMO_CATALOG}.${DEMO_SCHEMA}.customer_premium_classifier",
+  "pdfVolumePath":     "/Volumes/${DEMO_CATALOG}/${DEMO_SCHEMA}/manufacturing_reports",
+
+  // Delta source for boot-time Lakebase mirror (server/db/sync.ts). catalog +
+  // schema come from env; the table NAMES are domain-specific — rename to your
+  // demo's gold/silver tables (keep client/src/shared/types.ts + Drizzle
+  // schema in server/db/schema.ts in sync). maintenanceRecommendations empty → skip
+  // the ML-recommendations sync.
+  "data": {
+    "catalog": "${DEMO_CATALOG:ai_demo_gen}",
+    "schema":  "${DEMO_SCHEMA:volta_industrial}",
+    "tables": {
+      "lineStatus":                 "gold_line_status",
+      "openAtrisk":                 "gold_open_atrisk",
+      "maintenanceRecommendations": "gold_maintenance_recommendations",
+      "parts":                      "raw_parts"
+    }
+  },
+
+  // Surfaces in dock header + page titles. CUSTOMIZE per demo.
+  "branding": {
+    "appName": "Volta Plant Floor"
+  },
+
+  // Dock's "Suggested next" chip walks this list. Step N unlocks once the
+  // previous assistant message contains any triggerAfter[] substring.
+  // Picker: client/src/chat/script.ts. CUSTOMIZE per demo.
+  "assistantScript": [
+    {
+      "prompt": "Why is LINE-04 trending toward a stop, and what are my options?"
+    },
+    {
+      "prompt": "Rank the action. Use the model.",
+      "triggerAfter": ["failure", "risk", "part", "action"]
+    },
+    {
+      "prompt": "Yes — pull the line now.",
+      "triggerAfter": ["pull", "ranked", "recommended"]
+    }
+  ]
+}

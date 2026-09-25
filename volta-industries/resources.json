@@ -1,0 +1,25 @@
+{
+  "short_description": "Volta Industrial \u2014 a heavy-equipment maker's downtime-and-maintenance rescue. Machine telemetry pushed a cluster of production lines into elevated failure risk with parts that would need expediting, faster than the nightly report could surface. A plant-floor app reads governed telemetry at low latency, a maintenance recommendation ranks the move (pull now / run to shift end / expedite parts and run) per at-risk line against downtime cost, and a plant lead approves \u2014 turning governed lakehouse data into a floor action, scoped to one plant, with the assistant's AI spend capped and predictable per plant across the fleet.",
+  "capabilities": {
+    "buildable": [
+      "synthetic-data-gen",
+      "sdp",
+      "metric-views",
+      "aibi-dashboards",
+      "genie",
+      "databricks-apps",
+      "lakebase"
+    ],
+    "optional": [
+      "ml-training-serving"
+    ],
+    "talking_track": [
+      "lakeflow-connect",
+      "unity-catalog",
+      "ai-gateway",
+      "genie-one",
+      "genie-code"
+    ]
+  },
+  "created_resources": {}
+}

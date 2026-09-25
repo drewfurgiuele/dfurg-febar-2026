@@ -1,27 +1,72 @@
-# Declarative Automation Bundle configuration, more info here: https://docs.databricks.com/en/dev-tools/bundles/settings.html
+# Databricks Asset Bundle — Workshop: Volta Industrial (Downtime & Maintenance Rescue).
+#
+# WORKSHOP TEMPLATE — this bundle does the MINIMUM so a trainee can start the
+# AI Customer Challenge: it stands up the schema + a raw-data Volume and a job
+# that generates the synthetic dataset. It deliberately does NOT build the
+# pipeline, metric view, model, dashboard, Lakebase, or the app — those are the
+# graded milestones the trainee builds (see README.md → "What YOU need to
+# create" and app/APP_WORKSHOP.md).
+#
+#   1. `databricks bundle deploy`             → schema + raw_data volume + setup job
+#   2. `databricks bundle run volta_setup`    → generates the synthetic raw data
+#   Then follow README.md: build Milestone 1 (Data) → 2 (Lakebase) → 3 (App) → 4 (AI Gateway),
+#   using Genie Code against the specs in specifications/.
+#
+# The README + specifications/ + data_generation/ + app/ come with the forked
+# template folder; this bundle only provisions the workspace resources needed to
+# get data flowing. Deploy is documented in README.md — do NOT run it as part of authoring.
 bundle:
-  name: "volta-industries"
+  name: workshop-volta-industrial
 
-include:
-  - resources/*.yml
-  - resources/*/*.yml
+workspace:
+  root_path: /Workspace/Users/${workspace.current_user.userName}/volta-industrial-workshop
+
+variables:
+  catalog:
+    description: Unity Catalog for the workshop data (must already exist / you can create it).
+    default: dfurg_febar_catalog
+  schema:
+    description: Schema for the demo tables + the raw_data volume (created by this bundle).
+    default: volta_industrial
+
+resources:
+  schemas:
+    demo_schema:
+      catalog_name: ${var.catalog}
+      name: ${var.schema}
+      comment: "Workshop — Volta Industrial downtime/maintenance: synthetic plant-telemetry data."
+
+  volumes:
+    raw_data:
+      catalog_name: ${var.catalog}
+      schema_name: ${resources.schemas.demo_schema.name}
+      name: raw_data
+      volume_type: MANAGED
+      comment: "Raw parquet landing zone — generate_data.py writes here; the SDP silver you build reads it via read_files()."
+
+  jobs:
+    volta_setup:
+      name: "[Workshop] Volta Industrial — generate data"
+      description: "Generates the synthetic raw_* parquet datasets into the raw_data volume. Run this once after deploy, then build the pipeline/Lakebase/app/gateway yourself."
+      tasks:
+        - task_key: generate_data
+          notebook_task:
+            notebook_path: ./data_generation/generate_data.py
+            base_parameters:
+              catalog: ${var.catalog}
+              schema: ${resources.schemas.demo_schema.name}
+          environment_key: sdk_default
+      environments:
+        - environment_key: sdk_default
+          spec:
+            dependencies:
+              - numpy
+              - pandas
+              - faker
 
 targets:
-  # The 'dev' target, for development purposes. This target is the default.
   dev:
     mode: development
     default: true
-    workspace:
-      host: https://fevm-dfurg-febar.cloud.databricks.com
-
-  # The 'prod' target, used for production deployment.
   prod:
     mode: production
-    workspace:
-      host: https://fevm-dfurg-febar.cloud.databricks.com
-      # We always use /Users/drew.furgiuele@databricks.com for all resources to make sure we only have a single copy.
-      root_path: /Users/drew.furgiuele@databricks.com/.bundle/${bundle.name}/${bundle.target}
-    run_as:
-      # This runs as drew.furgiuele@databricks.com in production. We could also use a service principal here,
-      # see https://docs.databricks.com/dev-tools/bundles/permissions.html.
-      user_name: drew.furgiuele@databricks.com
