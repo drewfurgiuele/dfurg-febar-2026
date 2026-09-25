@@ -1,7 +1,7 @@
 /**
  * "Where the affected customers live" — bubble map.
  *
- * Real world map (OSM/CARTO Positron raster tiles via react-leaflet) with
+ * Real world map (Esri World Light Gray raster tiles via react-leaflet) with
  * one CircleMarker per (city, country). Radius = sqrt-scaled customer
  * count. When the agent's bulk write fires `dataMutated`, every bucket
  * is refetched and the bubbles whose `total` changed get a brief stroke-
@@ -165,11 +165,13 @@ export function CityMap({ status, lot }: Props) {
             className="h-full w-full"
             style={{ background: 'var(--muted)' }}
           >
+            {/* Esri World Light Gray Base — keyless, muted/light look. Note
+                the ArcGIS tile scheme is {z}/{y}/{x} (row before col), no
+                subdomains and no @2x retina suffix. */}
             <TileLayer
-              attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>, &copy; <a href="https://carto.com/attributions">CARTO</a>'
-              url="https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png"
-              subdomains={['a', 'b', 'c', 'd']}
-              maxZoom={19}
+              attribution='Tiles &copy; <a href="https://www.esri.com/">Esri</a> &mdash; Esri, HERE, Garmin, &copy; OpenStreetMap contributors'
+              url="https://services.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}"
+              maxZoom={16}
             />
             <FitBoundsOnSetChange cities={cities} />
             {cities.map((c) => (
