@@ -12,6 +12,8 @@
 > **overwrite the same `gold_maintenance_recommendations` table**. Nothing downstream changes. If you
 > skip it, drop `ml-training-serving` from `resources.json`'s buildable list.
 
+> **This build:** implemented. The heuristic MV was dropped from the pipeline, so this notebook (job `volta_ml_maintenance`) is the only producer of `gold_maintenance_recommendations`.
+
 Reads `gold_maintenance_outcomes` (training) + `gold_open_atrisk` (the lines to score). Overwrites `gold_maintenance_recommendations`.
 
 ## The story (same as the heuristic — just learned)
