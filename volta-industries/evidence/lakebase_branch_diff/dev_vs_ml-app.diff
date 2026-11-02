@@ -1,0 +1,38 @@
+--- dev.schema_snapshot.txt	2026-11-02 13:24:20
++++ ml-app.schema_snapshot.txt	2026-11-02 13:24:24
+@@ -1,7 +1,7 @@
+ ### SCHEMAS (schema | owner)
+ __db_system | databricks_control_plane
+ app | drew.furgiuele@databricks.com
+-appkit | 0247cace-63ac-4e61-914a-4f3423fed110
++appkit | 90723d14-3b00-4796-909e-67b3b080b78b
+ drizzle | drew.furgiuele@databricks.com
+ public | pg_database_owner
+ 
+@@ -27,7 +27,7 @@
+ app.open_atrisk | partitioned | databricks_writer_16406
+ app.parts | partitioned | databricks_writer_16406
+ app.work_orders_app | table | drew.furgiuele@databricks.com
+-appkit.appkit_cache_entries | table | 0247cace-63ac-4e61-914a-4f3423fed110
++appkit.appkit_cache_entries | table | 90723d14-3b00-4796-909e-67b3b080b78b
+ drizzle.__drizzle_migrations | table | drew.furgiuele@databricks.com
+ public.databricks_auth_metrics | view | cloud_admin
+ public.databricks_list_roles | view | cloud_admin
+@@ -403,14 +403,14 @@
+ __db_system.partition_25152 | 155
+ __db_system.partition_25176 | 800
+ __db_system.table_pipeline_id | 4
+-app.conversations | 13
++app.conversations | 14
+ app.feedback | 0
+ app.line_status | 1200
+ app.maintenance_recommendations | 155
+-app.messages | 52
++app.messages | 60
+ app.open_atrisk | 155
+ app.parts | 800
+-app.work_orders_app | 2
++app.work_orders_app | 3
+ appkit.appkit_cache_entries | 0
+ drizzle.__drizzle_migrations | 1
+ 

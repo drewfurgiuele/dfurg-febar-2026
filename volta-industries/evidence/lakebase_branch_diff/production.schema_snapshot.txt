@@ -1,0 +1,16 @@
+### SCHEMAS (schema | owner)
+__db_system | databricks_control_plane
+public | pg_database_owner
+
+### RELATIONS (schema.name | kind | owner)
+
+### COLUMNS (schema.table.column | type | nullable | default)
+
+### INDEXES
+
+### CONSTRAINTS
+
+### ROW COUNTS (schema.table | rows)
+
+### DRIZZLE MIGRATIONS (hash | created_at)
+(none)

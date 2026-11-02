@@ -1,0 +1,418 @@
+### SCHEMAS (schema | owner)
+__db_system | databricks_control_plane
+app | drew.furgiuele@databricks.com
+appkit | 0247cace-63ac-4e61-914a-4f3423fed110
+drizzle | drew.furgiuele@databricks.com
+public | pg_database_owner
+
+### RELATIONS (schema.name | kind | owner)
+__db_system.__db_prog_0282c229-60ea-464c-bcf0-33a2d849563c | table | databricks_writer_16406
+__db_system.__db_prog_52511a06-a848-4337-9f2f-f1cdd4ef6525 | table | databricks_writer_16406
+__db_system.__db_prog_5dd663b6-6bda-4585-a77b-b254c1287d8a | table | databricks_writer_16406
+__db_system.__db_prog_745a297a-004e-41fb-90c6-ea0c02de444f | table | databricks_writer_16406
+__db_system.__db_sync_log_0282c229-60ea-464c-bcf0-33a2d849563c | table | databricks_writer_16406
+__db_system.__db_sync_log_52511a06-a848-4337-9f2f-f1cdd4ef6525 | table | databricks_writer_16406
+__db_system.__db_sync_log_5dd663b6-6bda-4585-a77b-b254c1287d8a | table | databricks_writer_16406
+__db_system.__db_sync_log_745a297a-004e-41fb-90c6-ea0c02de444f | table | databricks_writer_16406
+__db_system.partition_172040 | table | databricks_writer_16406
+__db_system.partition_25101 | table | databricks_writer_16406
+__db_system.partition_25152 | table | databricks_writer_16406
+__db_system.partition_25176 | table | databricks_writer_16406
+__db_system.table_pipeline_id | table | databricks_writer_16406
+app.conversations | table | drew.furgiuele@databricks.com
+app.feedback | table | drew.furgiuele@databricks.com
+app.line_status | partitioned | databricks_writer_16406
+app.maintenance_recommendations | partitioned | databricks_writer_16406
+app.messages | table | drew.furgiuele@databricks.com
+app.open_atrisk | partitioned | databricks_writer_16406
+app.parts | partitioned | databricks_writer_16406
+app.work_orders_app | table | drew.furgiuele@databricks.com
+appkit.appkit_cache_entries | table | 0247cace-63ac-4e61-914a-4f3423fed110
+drizzle.__drizzle_migrations | table | drew.furgiuele@databricks.com
+public.databricks_auth_metrics | view | cloud_admin
+public.databricks_list_roles | view | cloud_admin
+public.databricks_synced_table_managers | view | cloud_admin
+public.local_cache | view | databricks_control_plane
+public.neon_backend_perf_counters | view | databricks_control_plane
+public.neon_backpressure_status | view | databricks_control_plane
+public.neon_lfc_stats | view | databricks_control_plane
+public.neon_lwlsn_cache_stats | view | databricks_control_plane
+public.neon_perf_counters | view | databricks_control_plane
+public.neon_relperst_cache_stats | view | databricks_control_plane
+public.neon_relsize_cache_stats | view | databricks_control_plane
+public.neon_stat_file_cache | view | databricks_control_plane
+
+### COLUMNS (schema.table.column | type | nullable | default)
+__db_system.__db_prog_0282c229-60ea-464c-bcf0-33a2d849563c.partition_id | integer | NO | 
+__db_system.__db_prog_0282c229-60ea-464c-bcf0-33a2d849563c.prog_id | bigint | NO | nextval('__db_system."__db_prog_0282c229-60ea-464c-bcf0-33a2d849563c_prog_id_seq"'::regclass)
+__db_system.__db_prog_0282c229-60ea-464c-bcf0-33a2d849563c.batch_id | bigint | NO | 
+__db_system.__db_prog_0282c229-60ea-464c-bcf0-33a2d849563c.current_rows | bigint | NO | 
+__db_system.__db_prog_0282c229-60ea-464c-bcf0-33a2d849563c.total_rows | bigint | NO | 
+__db_system.__db_prog_0282c229-60ea-464c-bcf0-33a2d849563c.phase | integer | NO | 
+__db_system.__db_prog_0282c229-60ea-464c-bcf0-33a2d849563c.timestamp | timestamp without time zone | NO | 
+__db_system.__db_prog_52511a06-a848-4337-9f2f-f1cdd4ef6525.partition_id | integer | NO | 
+__db_system.__db_prog_52511a06-a848-4337-9f2f-f1cdd4ef6525.prog_id | bigint | NO | nextval('__db_system."__db_prog_52511a06-a848-4337-9f2f-f1cdd4ef6525_prog_id_seq"'::regclass)
+__db_system.__db_prog_52511a06-a848-4337-9f2f-f1cdd4ef6525.batch_id | bigint | NO | 
+__db_system.__db_prog_52511a06-a848-4337-9f2f-f1cdd4ef6525.current_rows | bigint | NO | 
+__db_system.__db_prog_52511a06-a848-4337-9f2f-f1cdd4ef6525.total_rows | bigint | NO | 
+__db_system.__db_prog_52511a06-a848-4337-9f2f-f1cdd4ef6525.phase | integer | NO | 
+__db_system.__db_prog_52511a06-a848-4337-9f2f-f1cdd4ef6525.timestamp | timestamp without time zone | NO | 
+__db_system.__db_prog_5dd663b6-6bda-4585-a77b-b254c1287d8a.partition_id | integer | NO | 
+__db_system.__db_prog_5dd663b6-6bda-4585-a77b-b254c1287d8a.prog_id | bigint | NO | nextval('__db_system."__db_prog_5dd663b6-6bda-4585-a77b-b254c1287d8a_prog_id_seq"'::regclass)
+__db_system.__db_prog_5dd663b6-6bda-4585-a77b-b254c1287d8a.batch_id | bigint | NO | 
+__db_system.__db_prog_5dd663b6-6bda-4585-a77b-b254c1287d8a.current_rows | bigint | NO | 
+__db_system.__db_prog_5dd663b6-6bda-4585-a77b-b254c1287d8a.total_rows | bigint | NO | 
+__db_system.__db_prog_5dd663b6-6bda-4585-a77b-b254c1287d8a.phase | integer | NO | 
+__db_system.__db_prog_5dd663b6-6bda-4585-a77b-b254c1287d8a.timestamp | timestamp without time zone | NO | 
+__db_system.__db_prog_745a297a-004e-41fb-90c6-ea0c02de444f.partition_id | integer | NO | 
+__db_system.__db_prog_745a297a-004e-41fb-90c6-ea0c02de444f.prog_id | bigint | NO | nextval('__db_system."__db_prog_745a297a-004e-41fb-90c6-ea0c02de444f_prog_id_seq"'::regclass)
+__db_system.__db_prog_745a297a-004e-41fb-90c6-ea0c02de444f.batch_id | bigint | NO | 
+__db_system.__db_prog_745a297a-004e-41fb-90c6-ea0c02de444f.current_rows | bigint | NO | 
+__db_system.__db_prog_745a297a-004e-41fb-90c6-ea0c02de444f.total_rows | bigint | NO | 
+__db_system.__db_prog_745a297a-004e-41fb-90c6-ea0c02de444f.phase | integer | NO | 
+__db_system.__db_prog_745a297a-004e-41fb-90c6-ea0c02de444f.timestamp | timestamp without time zone | NO | 
+__db_system.__db_sync_log_0282c229-60ea-464c-bcf0-33a2d849563c.commit_version | bigint | NO | 
+__db_system.__db_sync_log_0282c229-60ea-464c-bcf0-33a2d849563c.delta_commit_timestamp | timestamp without time zone | YES | 
+__db_system.__db_sync_log_0282c229-60ea-464c-bcf0-33a2d849563c.complete_version_processed | boolean | YES | 
+__db_system.__db_sync_log_0282c229-60ea-464c-bcf0-33a2d849563c.batch_id | bigint | YES | 
+__db_system.__db_sync_log_0282c229-60ea-464c-bcf0-33a2d849563c.batch_start | timestamp without time zone | YES | 
+__db_system.__db_sync_log_0282c229-60ea-464c-bcf0-33a2d849563c.per_commit_start | timestamp without time zone | YES | 
+__db_system.__db_sync_log_0282c229-60ea-464c-bcf0-33a2d849563c.db_write_start | timestamp without time zone | YES | 
+__db_system.__db_sync_log_0282c229-60ea-464c-bcf0-33a2d849563c.db_write_end | timestamp without time zone | YES | 
+__db_system.__db_sync_log_0282c229-60ea-464c-bcf0-33a2d849563c.num_changes | bigint | YES | 
+__db_system.__db_sync_log_52511a06-a848-4337-9f2f-f1cdd4ef6525.commit_version | bigint | NO | 
+__db_system.__db_sync_log_52511a06-a848-4337-9f2f-f1cdd4ef6525.delta_commit_timestamp | timestamp without time zone | YES | 
+__db_system.__db_sync_log_52511a06-a848-4337-9f2f-f1cdd4ef6525.complete_version_processed | boolean | YES | 
+__db_system.__db_sync_log_52511a06-a848-4337-9f2f-f1cdd4ef6525.batch_id | bigint | YES | 
+__db_system.__db_sync_log_52511a06-a848-4337-9f2f-f1cdd4ef6525.batch_start | timestamp without time zone | YES | 
+__db_system.__db_sync_log_52511a06-a848-4337-9f2f-f1cdd4ef6525.per_commit_start | timestamp without time zone | YES | 
+__db_system.__db_sync_log_52511a06-a848-4337-9f2f-f1cdd4ef6525.db_write_start | timestamp without time zone | YES | 
+__db_system.__db_sync_log_52511a06-a848-4337-9f2f-f1cdd4ef6525.db_write_end | timestamp without time zone | YES | 
+__db_system.__db_sync_log_52511a06-a848-4337-9f2f-f1cdd4ef6525.num_changes | bigint | YES | 
+__db_system.__db_sync_log_5dd663b6-6bda-4585-a77b-b254c1287d8a.commit_version | bigint | NO | 
+__db_system.__db_sync_log_5dd663b6-6bda-4585-a77b-b254c1287d8a.delta_commit_timestamp | timestamp without time zone | YES | 
+__db_system.__db_sync_log_5dd663b6-6bda-4585-a77b-b254c1287d8a.complete_version_processed | boolean | YES | 
+__db_system.__db_sync_log_5dd663b6-6bda-4585-a77b-b254c1287d8a.batch_id | bigint | YES | 
+__db_system.__db_sync_log_5dd663b6-6bda-4585-a77b-b254c1287d8a.batch_start | timestamp without time zone | YES | 
+__db_system.__db_sync_log_5dd663b6-6bda-4585-a77b-b254c1287d8a.per_commit_start | timestamp without time zone | YES | 
+__db_system.__db_sync_log_5dd663b6-6bda-4585-a77b-b254c1287d8a.db_write_start | timestamp without time zone | YES | 
+__db_system.__db_sync_log_5dd663b6-6bda-4585-a77b-b254c1287d8a.db_write_end | timestamp without time zone | YES | 
+__db_system.__db_sync_log_5dd663b6-6bda-4585-a77b-b254c1287d8a.num_changes | bigint | YES | 
+__db_system.__db_sync_log_745a297a-004e-41fb-90c6-ea0c02de444f.commit_version | bigint | NO | 
+__db_system.__db_sync_log_745a297a-004e-41fb-90c6-ea0c02de444f.delta_commit_timestamp | timestamp without time zone | YES | 
+__db_system.__db_sync_log_745a297a-004e-41fb-90c6-ea0c02de444f.complete_version_processed | boolean | YES | 
+__db_system.__db_sync_log_745a297a-004e-41fb-90c6-ea0c02de444f.batch_id | bigint | YES | 
+__db_system.__db_sync_log_745a297a-004e-41fb-90c6-ea0c02de444f.batch_start | timestamp without time zone | YES | 
+__db_system.__db_sync_log_745a297a-004e-41fb-90c6-ea0c02de444f.per_commit_start | timestamp without time zone | YES | 
+__db_system.__db_sync_log_745a297a-004e-41fb-90c6-ea0c02de444f.db_write_start | timestamp without time zone | YES | 
+__db_system.__db_sync_log_745a297a-004e-41fb-90c6-ea0c02de444f.db_write_end | timestamp without time zone | YES | 
+__db_system.__db_sync_log_745a297a-004e-41fb-90c6-ea0c02de444f.num_changes | bigint | YES | 
+__db_system.partition_172040.line_id | text | NO | 
+__db_system.partition_172040.recommended_action | text | YES | 
+__db_system.partition_172040.predicted_downtime_cost_avoided_usd | double precision | YES | 
+__db_system.partition_172040.predicted_downtime_cost_usd | double precision | YES | 
+__db_system.partition_172040.predicted_net_value_usd | double precision | YES | 
+__db_system.partition_172040.action_ranking | text | YES | 
+__db_system.partition_172040.scored_at | timestamp with time zone | YES | 
+__db_system.partition_25101.id | text | NO | 
+__db_system.partition_25101.line_id | text | YES | 
+__db_system.partition_25101.plant_id | text | YES | 
+__db_system.partition_25101.line_name | text | YES | 
+__db_system.partition_25101.machine_type | text | YES | 
+__db_system.partition_25101.criticality | text | YES | 
+__db_system.partition_25101.plant_lat | double precision | YES | 
+__db_system.partition_25101.plant_lng | double precision | YES | 
+__db_system.partition_25101.plant_name | text | YES | 
+__db_system.partition_25101.region | text | YES | 
+__db_system.partition_25101.vibration_rms | double precision | YES | 
+__db_system.partition_25101.temperature_c | double precision | YES | 
+__db_system.partition_25101.utilization_pct | double precision | YES | 
+__db_system.partition_25101.failure_risk_score | double precision | YES | 
+__db_system.partition_25101.open_wo_count | bigint | YES | 
+__db_system.partition_25101.has_open_corrective | boolean | YES | 
+__db_system.partition_25101.part_local | boolean | YES | 
+__db_system.partition_25101.candidate_part_id | text | YES | 
+__db_system.partition_25101.part_lead_time_days | integer | YES | 
+__db_system.partition_25101.part_unit_cost_usd | double precision | YES | 
+__db_system.partition_25101.risk_signal_score | numeric | YES | 
+__db_system.partition_25101.downtime_exposure_usd | double precision | YES | 
+__db_system.partition_25101.risk_band | text | YES | 
+__db_system.partition_25101.current_status | text | YES | 
+__db_system.partition_25101.last_check_at | timestamp with time zone | YES | 
+__db_system.partition_25152.line_id | text | NO | 
+__db_system.partition_25152.plant_id | text | YES | 
+__db_system.partition_25152.line_name | text | YES | 
+__db_system.partition_25152.machine_type | text | YES | 
+__db_system.partition_25152.criticality | text | YES | 
+__db_system.partition_25152.plant_lat | double precision | YES | 
+__db_system.partition_25152.plant_lng | double precision | YES | 
+__db_system.partition_25152.vibration_rms | double precision | YES | 
+__db_system.partition_25152.temperature_c | double precision | YES | 
+__db_system.partition_25152.utilization_pct | double precision | YES | 
+__db_system.partition_25152.failure_risk_score | double precision | YES | 
+__db_system.partition_25152.open_wo_count | bigint | YES | 
+__db_system.partition_25152.has_open_corrective | boolean | YES | 
+__db_system.partition_25152.downtime_exposure_usd | double precision | YES | 
+__db_system.partition_25152.risk_band | text | YES | 
+__db_system.partition_25152.part_local | boolean | YES | 
+__db_system.partition_25152.candidate_part_id | text | YES | 
+__db_system.partition_25152.part_lead_time_days | integer | YES | 
+__db_system.partition_25152.part_unit_cost_usd | double precision | YES | 
+__db_system.partition_25176.id | text | NO | 
+__db_system.partition_25176.part_id | text | YES | 
+__db_system.partition_25176.part_name | text | YES | 
+__db_system.partition_25176.part_category | text | YES | 
+__db_system.partition_25176.description | text | YES | 
+__db_system.partition_25176.part_local | boolean | YES | 
+__db_system.partition_25176.lead_time_days | integer | YES | 
+__db_system.partition_25176.unit_cost_usd | double precision | YES | 
+__db_system.table_pipeline_id.schema_name | name | NO | 
+__db_system.table_pipeline_id.table_name | name | NO | 
+__db_system.table_pipeline_id.pipeline_id | uuid | NO | 
+app.conversations.id | uuid | NO | gen_random_uuid()
+app.conversations.user_email | text | NO | 
+app.conversations.title | text | NO | 
+app.conversations.kind | text | NO | 'default'::text
+app.conversations.created_at | timestamp with time zone | NO | now()
+app.conversations.updated_at | timestamp with time zone | NO | now()
+app.feedback.id | uuid | NO | gen_random_uuid()
+app.feedback.message_id | uuid | NO | 
+app.feedback.user_email | text | NO | 
+app.feedback.value | text | NO | 
+app.feedback.rationale | text | YES | 
+app.feedback.trace_id | text | YES | 
+app.feedback.mlflow_assessment_id | text | YES | 
+app.feedback.created_at | timestamp with time zone | NO | now()
+app.line_status.id | text | NO | 
+app.line_status.line_id | text | YES | 
+app.line_status.plant_id | text | YES | 
+app.line_status.line_name | text | YES | 
+app.line_status.machine_type | text | YES | 
+app.line_status.criticality | text | YES | 
+app.line_status.plant_lat | double precision | YES | 
+app.line_status.plant_lng | double precision | YES | 
+app.line_status.plant_name | text | YES | 
+app.line_status.region | text | YES | 
+app.line_status.vibration_rms | double precision | YES | 
+app.line_status.temperature_c | double precision | YES | 
+app.line_status.utilization_pct | double precision | YES | 
+app.line_status.failure_risk_score | double precision | YES | 
+app.line_status.open_wo_count | bigint | YES | 
+app.line_status.has_open_corrective | boolean | YES | 
+app.line_status.part_local | boolean | YES | 
+app.line_status.candidate_part_id | text | YES | 
+app.line_status.part_lead_time_days | integer | YES | 
+app.line_status.part_unit_cost_usd | double precision | YES | 
+app.line_status.risk_signal_score | numeric | YES | 
+app.line_status.downtime_exposure_usd | double precision | YES | 
+app.line_status.risk_band | text | YES | 
+app.line_status.current_status | text | YES | 
+app.line_status.last_check_at | timestamp with time zone | YES | 
+app.maintenance_recommendations.line_id | text | NO | 
+app.maintenance_recommendations.recommended_action | text | YES | 
+app.maintenance_recommendations.predicted_downtime_cost_avoided_usd | double precision | YES | 
+app.maintenance_recommendations.predicted_downtime_cost_usd | double precision | YES | 
+app.maintenance_recommendations.predicted_net_value_usd | double precision | YES | 
+app.maintenance_recommendations.action_ranking | text | YES | 
+app.maintenance_recommendations.scored_at | timestamp with time zone | YES | 
+app.messages.id | uuid | NO | gen_random_uuid()
+app.messages.conversation_id | uuid | NO | 
+app.messages.role | text | NO | 
+app.messages.content | text | NO | 
+app.messages.position | integer | NO | 
+app.messages.trace_id | text | YES | 
+app.messages.thinking | jsonb | NO | '[]'::jsonb
+app.messages.error | text | YES | 
+app.messages.canceled | boolean | NO | false
+app.messages.created_at | timestamp with time zone | NO | now()
+app.open_atrisk.line_id | text | NO | 
+app.open_atrisk.plant_id | text | YES | 
+app.open_atrisk.line_name | text | YES | 
+app.open_atrisk.machine_type | text | YES | 
+app.open_atrisk.criticality | text | YES | 
+app.open_atrisk.plant_lat | double precision | YES | 
+app.open_atrisk.plant_lng | double precision | YES | 
+app.open_atrisk.vibration_rms | double precision | YES | 
+app.open_atrisk.temperature_c | double precision | YES | 
+app.open_atrisk.utilization_pct | double precision | YES | 
+app.open_atrisk.failure_risk_score | double precision | YES | 
+app.open_atrisk.open_wo_count | bigint | YES | 
+app.open_atrisk.has_open_corrective | boolean | YES | 
+app.open_atrisk.downtime_exposure_usd | double precision | YES | 
+app.open_atrisk.risk_band | text | YES | 
+app.open_atrisk.part_local | boolean | YES | 
+app.open_atrisk.candidate_part_id | text | YES | 
+app.open_atrisk.part_lead_time_days | integer | YES | 
+app.open_atrisk.part_unit_cost_usd | double precision | YES | 
+app.parts.id | text | NO | 
+app.parts.part_id | text | YES | 
+app.parts.part_name | text | YES | 
+app.parts.part_category | text | YES | 
+app.parts.description | text | YES | 
+app.parts.part_local | boolean | YES | 
+app.parts.lead_time_days | integer | YES | 
+app.parts.unit_cost_usd | double precision | YES | 
+app.work_orders_app.id | uuid | NO | gen_random_uuid()
+app.work_orders_app.line_id | text | NO | 
+app.work_orders_app.action_type | text | NO | 
+app.work_orders_app.part_id | text | YES | 
+app.work_orders_app.drafted_wo | text | NO | 
+app.work_orders_app.predicted_downtime_cost_avoided_usd | double precision | YES | 
+app.work_orders_app.status | text | NO | 'drafted'::text
+app.work_orders_app.approved_by | text | YES | 
+app.work_orders_app.audit_trail | jsonb | NO | '[]'::jsonb
+app.work_orders_app.created_at | timestamp with time zone | NO | now()
+app.work_orders_app.decided_at | timestamp with time zone | YES | 
+appkit.appkit_cache_entries.id | bigint | NO | nextval('appkit.appkit_cache_entries_id_seq'::regclass)
+appkit.appkit_cache_entries.key_hash | bigint | NO | 
+appkit.appkit_cache_entries.key | bytea | NO | 
+appkit.appkit_cache_entries.value | bytea | NO | 
+appkit.appkit_cache_entries.byte_size | integer | NO | 
+appkit.appkit_cache_entries.expiry | bigint | NO | 
+appkit.appkit_cache_entries.created_at | timestamp without time zone | NO | now()
+appkit.appkit_cache_entries.last_accessed | timestamp without time zone | NO | now()
+drizzle.__drizzle_migrations.id | integer | NO | nextval('drizzle.__drizzle_migrations_id_seq'::regclass)
+drizzle.__drizzle_migrations.hash | text | NO | 
+drizzle.__drizzle_migrations.created_at | bigint | YES | 
+public.databricks_auth_metrics.metric | text | YES | 
+public.databricks_auth_metrics.enum_name | text | YES | 
+public.databricks_auth_metrics.enum_value | text | YES | 
+public.databricks_auth_metrics.bucket_le | double precision | YES | 
+public.databricks_auth_metrics.value | double precision | YES | 
+public.databricks_list_roles.role_name | text | YES | 
+public.databricks_list_roles.identity_type | text | YES | 
+public.databricks_synced_table_managers.schema_name | text | YES | 
+public.databricks_synced_table_managers.table_name | text | YES | 
+public.databricks_synced_table_managers.user_name | text | YES | 
+public.local_cache.pageoffs | bigint | YES | 
+public.local_cache.relfilenode | oid | YES | 
+public.local_cache.reltablespace | oid | YES | 
+public.local_cache.reldatabase | oid | YES | 
+public.local_cache.relforknumber | smallint | YES | 
+public.local_cache.relblocknumber | bigint | YES | 
+public.local_cache.accesscount | integer | YES | 
+public.neon_backend_perf_counters.procno | integer | YES | 
+public.neon_backend_perf_counters.pid | integer | YES | 
+public.neon_backend_perf_counters.metric | text | YES | 
+public.neon_backend_perf_counters.bucket_le | double precision | YES | 
+public.neon_backend_perf_counters.value | double precision | YES | 
+public.neon_backpressure_status.metric | text | YES | 
+public.neon_backpressure_status.value | double precision | YES | 
+public.neon_lfc_stats.lfc_key | text | YES | 
+public.neon_lfc_stats.lfc_value | bigint | YES | 
+public.neon_lwlsn_cache_stats.metric_name | text | YES | 
+public.neon_lwlsn_cache_stats.metric_value | bigint | YES | 
+public.neon_perf_counters.metric | text | YES | 
+public.neon_perf_counters.bucket_le | double precision | YES | 
+public.neon_perf_counters.value | double precision | YES | 
+public.neon_relperst_cache_stats.metric_name | text | YES | 
+public.neon_relperst_cache_stats.metric_value | bigint | YES | 
+public.neon_relsize_cache_stats.metric_name | text | YES | 
+public.neon_relsize_cache_stats.metric_value | bigint | YES | 
+public.neon_stat_file_cache.file_cache_misses | bigint | YES | 
+public.neon_stat_file_cache.file_cache_hits | bigint | YES | 
+public.neon_stat_file_cache.file_cache_used | bigint | YES | 
+public.neon_stat_file_cache.file_cache_writes | bigint | YES | 
+public.neon_stat_file_cache.file_cache_hit_ratio | numeric | YES | 
+
+### INDEXES
+__db_system.__db_prog_0282c229-60ea-464c-bcf0-33a2d849563c_pkey | CREATE UNIQUE INDEX "__db_prog_0282c229-60ea-464c-bcf0-33a2d849563c_pkey" ON __db_system."__db_prog_0282c229-60ea-464c-bcf0-33a2d849563c" USING btree (partition_id, prog_id)
+__db_system.__db_prog_52511a06-a848-4337-9f2f-f1cdd4ef6525_pkey | CREATE UNIQUE INDEX "__db_prog_52511a06-a848-4337-9f2f-f1cdd4ef6525_pkey" ON __db_system."__db_prog_52511a06-a848-4337-9f2f-f1cdd4ef6525" USING btree (partition_id, prog_id)
+__db_system.__db_prog_5dd663b6-6bda-4585-a77b-b254c1287d8a_pkey | CREATE UNIQUE INDEX "__db_prog_5dd663b6-6bda-4585-a77b-b254c1287d8a_pkey" ON __db_system."__db_prog_5dd663b6-6bda-4585-a77b-b254c1287d8a" USING btree (partition_id, prog_id)
+__db_system.__db_prog_745a297a-004e-41fb-90c6-ea0c02de444f_pkey | CREATE UNIQUE INDEX "__db_prog_745a297a-004e-41fb-90c6-ea0c02de444f_pkey" ON __db_system."__db_prog_745a297a-004e-41fb-90c6-ea0c02de444f" USING btree (partition_id, prog_id)
+__db_system.__db_sync_log_0282c229-60ea-464c-bcf0-33a2d849563c_pkey | CREATE UNIQUE INDEX "__db_sync_log_0282c229-60ea-464c-bcf0-33a2d849563c_pkey" ON __db_system."__db_sync_log_0282c229-60ea-464c-bcf0-33a2d849563c" USING btree (commit_version)
+__db_system.__db_sync_log_52511a06-a848-4337-9f2f-f1cdd4ef6525_pkey | CREATE UNIQUE INDEX "__db_sync_log_52511a06-a848-4337-9f2f-f1cdd4ef6525_pkey" ON __db_system."__db_sync_log_52511a06-a848-4337-9f2f-f1cdd4ef6525" USING btree (commit_version)
+__db_system.__db_sync_log_5dd663b6-6bda-4585-a77b-b254c1287d8a_pkey | CREATE UNIQUE INDEX "__db_sync_log_5dd663b6-6bda-4585-a77b-b254c1287d8a_pkey" ON __db_system."__db_sync_log_5dd663b6-6bda-4585-a77b-b254c1287d8a" USING btree (commit_version)
+__db_system.__db_sync_log_745a297a-004e-41fb-90c6-ea0c02de444f_pkey | CREATE UNIQUE INDEX "__db_sync_log_745a297a-004e-41fb-90c6-ea0c02de444f_pkey" ON __db_system."__db_sync_log_745a297a-004e-41fb-90c6-ea0c02de444f" USING btree (commit_version)
+__db_system.__db_tmp_0282c229-60ea-464c-bcf0-33a2d849563c_pkey | CREATE UNIQUE INDEX "__db_tmp_0282c229-60ea-464c-bcf0-33a2d849563c_pkey" ON __db_system.partition_25101 USING btree (id)
+__db_system.__db_tmp_52511a06-a848-4337-9f2f-f1cdd4ef6525_pkey | CREATE UNIQUE INDEX "__db_tmp_52511a06-a848-4337-9f2f-f1cdd4ef6525_pkey" ON __db_system.partition_25152 USING btree (line_id)
+__db_system.__db_tmp_5dd663b6-6bda-4585-a77b-b254c1287d8a_pkey | CREATE UNIQUE INDEX "__db_tmp_5dd663b6-6bda-4585-a77b-b254c1287d8a_pkey" ON __db_system.partition_172040 USING btree (line_id)
+__db_system.__db_tmp_745a297a-004e-41fb-90c6-ea0c02de444f_pkey | CREATE UNIQUE INDEX "__db_tmp_745a297a-004e-41fb-90c6-ea0c02de444f_pkey" ON __db_system.partition_25176 USING btree (id)
+__db_system.partition_25101_failure_risk_score_idx | CREATE INDEX partition_25101_failure_risk_score_idx ON __db_system.partition_25101 USING btree (failure_risk_score)
+__db_system.partition_25101_plant_id_idx | CREATE INDEX partition_25101_plant_id_idx ON __db_system.partition_25101 USING btree (plant_id)
+__db_system.partition_25152_failure_risk_score_idx | CREATE INDEX partition_25152_failure_risk_score_idx ON __db_system.partition_25152 USING btree (failure_risk_score)
+__db_system.partition_25152_plant_id_idx | CREATE INDEX partition_25152_plant_id_idx ON __db_system.partition_25152 USING btree (plant_id)
+__db_system.partition_25176_part_id_idx | CREATE INDEX partition_25176_part_id_idx ON __db_system.partition_25176 USING btree (part_id)
+__db_system.partition_25176_part_local_idx | CREATE INDEX partition_25176_part_local_idx ON __db_system.partition_25176 USING btree (part_local)
+__db_system.table_pipeline_id_pkey | CREATE UNIQUE INDEX table_pipeline_id_pkey ON __db_system.table_pipeline_id USING btree (schema_name, table_name)
+app.conversations_kind_idx | CREATE INDEX conversations_kind_idx ON app.conversations USING btree (user_email, kind)
+app.conversations_pkey | CREATE UNIQUE INDEX conversations_pkey ON app.conversations USING btree (id)
+app.conversations_user_idx | CREATE INDEX conversations_user_idx ON app.conversations USING btree (user_email, updated_at)
+app.feedback_message_idx | CREATE INDEX feedback_message_idx ON app.feedback USING btree (message_id)
+app.feedback_pkey | CREATE UNIQUE INDEX feedback_pkey ON app.feedback USING btree (id)
+app.line_status_pkey | CREATE UNIQUE INDEX line_status_pkey ON ONLY app.line_status USING btree (id)
+app.line_status_plant_idx | CREATE INDEX line_status_plant_idx ON ONLY app.line_status USING btree (plant_id)
+app.line_status_risk_idx | CREATE INDEX line_status_risk_idx ON ONLY app.line_status USING btree (failure_risk_score)
+app.maintenance_recommendations_pkey | CREATE UNIQUE INDEX maintenance_recommendations_pkey ON ONLY app.maintenance_recommendations USING btree (line_id)
+app.messages_convo_pos_uq | CREATE UNIQUE INDEX messages_convo_pos_uq ON app.messages USING btree (conversation_id, "position")
+app.messages_pkey | CREATE UNIQUE INDEX messages_pkey ON app.messages USING btree (id)
+app.open_atrisk_pkey | CREATE UNIQUE INDEX open_atrisk_pkey ON ONLY app.open_atrisk USING btree (line_id)
+app.open_atrisk_plant_idx | CREATE INDEX open_atrisk_plant_idx ON ONLY app.open_atrisk USING btree (plant_id)
+app.open_atrisk_risk_idx | CREATE INDEX open_atrisk_risk_idx ON ONLY app.open_atrisk USING btree (failure_risk_score)
+app.parts_local_idx | CREATE INDEX parts_local_idx ON ONLY app.parts USING btree (part_local)
+app.parts_part_id_idx | CREATE INDEX parts_part_id_idx ON ONLY app.parts USING btree (part_id)
+app.parts_pkey | CREATE UNIQUE INDEX parts_pkey ON ONLY app.parts USING btree (id)
+app.work_orders_app_pkey | CREATE UNIQUE INDEX work_orders_app_pkey ON app.work_orders_app USING btree (id)
+app.work_orders_line_idx | CREATE INDEX work_orders_line_idx ON app.work_orders_app USING btree (line_id, status)
+app.work_orders_status_idx | CREATE INDEX work_orders_status_idx ON app.work_orders_app USING btree (status)
+appkit.appkit_cache_entries_pkey | CREATE UNIQUE INDEX appkit_cache_entries_pkey ON appkit.appkit_cache_entries USING btree (id)
+appkit.idx_appkit_cache_entries_byte_size | CREATE INDEX idx_appkit_cache_entries_byte_size ON appkit.appkit_cache_entries USING btree (byte_size)
+appkit.idx_appkit_cache_entries_expiry | CREATE INDEX idx_appkit_cache_entries_expiry ON appkit.appkit_cache_entries USING btree (expiry)
+appkit.idx_appkit_cache_entries_key_hash | CREATE UNIQUE INDEX idx_appkit_cache_entries_key_hash ON appkit.appkit_cache_entries USING btree (key_hash)
+appkit.idx_appkit_cache_entries_last_accessed | CREATE INDEX idx_appkit_cache_entries_last_accessed ON appkit.appkit_cache_entries USING btree (last_accessed)
+drizzle.__drizzle_migrations_pkey | CREATE UNIQUE INDEX __drizzle_migrations_pkey ON drizzle.__drizzle_migrations USING btree (id)
+
+### CONSTRAINTS
+__db_system.__db_prog_0282c229-60ea-464c-bcf0-33a2d849563c.__db_prog_0282c229-60ea-464c-bcf0-33a2d849563c_pkey | PRIMARY KEY (partition_id, prog_id)
+__db_system.__db_prog_52511a06-a848-4337-9f2f-f1cdd4ef6525.__db_prog_52511a06-a848-4337-9f2f-f1cdd4ef6525_pkey | PRIMARY KEY (partition_id, prog_id)
+__db_system.__db_prog_5dd663b6-6bda-4585-a77b-b254c1287d8a.__db_prog_5dd663b6-6bda-4585-a77b-b254c1287d8a_pkey | PRIMARY KEY (partition_id, prog_id)
+__db_system.__db_prog_745a297a-004e-41fb-90c6-ea0c02de444f.__db_prog_745a297a-004e-41fb-90c6-ea0c02de444f_pkey | PRIMARY KEY (partition_id, prog_id)
+__db_system.__db_sync_log_0282c229-60ea-464c-bcf0-33a2d849563c.__db_sync_log_0282c229-60ea-464c-bcf0-33a2d849563c_pkey | PRIMARY KEY (commit_version)
+__db_system.__db_sync_log_52511a06-a848-4337-9f2f-f1cdd4ef6525.__db_sync_log_52511a06-a848-4337-9f2f-f1cdd4ef6525_pkey | PRIMARY KEY (commit_version)
+__db_system.__db_sync_log_5dd663b6-6bda-4585-a77b-b254c1287d8a.__db_sync_log_5dd663b6-6bda-4585-a77b-b254c1287d8a_pkey | PRIMARY KEY (commit_version)
+__db_system.__db_sync_log_745a297a-004e-41fb-90c6-ea0c02de444f.__db_sync_log_745a297a-004e-41fb-90c6-ea0c02de444f_pkey | PRIMARY KEY (commit_version)
+__db_system.partition_172040.__db_tmp_5dd663b6-6bda-4585-a77b-b254c1287d8a_pkey | PRIMARY KEY (line_id)
+__db_system.partition_25101.__db_tmp_0282c229-60ea-464c-bcf0-33a2d849563c_pkey | PRIMARY KEY (id)
+__db_system.partition_25152.__db_tmp_52511a06-a848-4337-9f2f-f1cdd4ef6525_pkey | PRIMARY KEY (line_id)
+__db_system.partition_25176.__db_tmp_745a297a-004e-41fb-90c6-ea0c02de444f_pkey | PRIMARY KEY (id)
+__db_system.table_pipeline_id.table_pipeline_id_pkey | PRIMARY KEY (schema_name, table_name)
+app.conversations.conversations_pkey | PRIMARY KEY (id)
+app.feedback.feedback_message_id_messages_id_fk | FOREIGN KEY (message_id) REFERENCES app.messages(id) ON DELETE CASCADE
+app.feedback.feedback_pkey | PRIMARY KEY (id)
+app.line_status.line_status_pkey | PRIMARY KEY (id)
+app.maintenance_recommendations.maintenance_recommendations_pkey | PRIMARY KEY (line_id)
+app.messages.messages_conversation_id_conversations_id_fk | FOREIGN KEY (conversation_id) REFERENCES app.conversations(id) ON DELETE CASCADE
+app.messages.messages_pkey | PRIMARY KEY (id)
+app.open_atrisk.open_atrisk_pkey | PRIMARY KEY (line_id)
+app.parts.parts_pkey | PRIMARY KEY (id)
+app.work_orders_app.work_orders_app_pkey | PRIMARY KEY (id)
+appkit.appkit_cache_entries.appkit_cache_entries_pkey | PRIMARY KEY (id)
+drizzle.__drizzle_migrations.__drizzle_migrations_pkey | PRIMARY KEY (id)
+
+### ROW COUNTS (schema.table | rows)
+__db_system.__db_prog_0282c229-60ea-464c-bcf0-33a2d849563c | 2
+__db_system.__db_prog_52511a06-a848-4337-9f2f-f1cdd4ef6525 | 1
+__db_system.__db_prog_5dd663b6-6bda-4585-a77b-b254c1287d8a | 1
+__db_system.__db_prog_745a297a-004e-41fb-90c6-ea0c02de444f | 2
+__db_system.__db_sync_log_0282c229-60ea-464c-bcf0-33a2d849563c | 1
+__db_system.__db_sync_log_52511a06-a848-4337-9f2f-f1cdd4ef6525 | 1
+__db_system.__db_sync_log_5dd663b6-6bda-4585-a77b-b254c1287d8a | 1
+__db_system.__db_sync_log_745a297a-004e-41fb-90c6-ea0c02de444f | 1
+__db_system.partition_172040 | 155
+__db_system.partition_25101 | 1200
+__db_system.partition_25152 | 155
+__db_system.partition_25176 | 800
+__db_system.table_pipeline_id | 4
+app.conversations | 13
+app.feedback | 0
+app.line_status | 1200
+app.maintenance_recommendations | 155
+app.messages | 52
+app.open_atrisk | 155
+app.parts | 800
+app.work_orders_app | 2
+appkit.appkit_cache_entries | 0
+drizzle.__drizzle_migrations | 1
+
+### DRIZZLE MIGRATIONS (hash | created_at)
+459f97dfde94152fa829d5da3a83c83e7d88d0e842ac489bf3d7e52814d3ee98 | 1790346745932
