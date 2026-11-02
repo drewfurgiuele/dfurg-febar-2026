@@ -109,6 +109,12 @@ if ! err="$(databricks workspace import-dir . "$WS_PATH" ${PROFILE_FLAG[@]+"${PR
     exit 1
 fi
 
+# The Apps runtime auto-loads a .env from the source root — but .env is
+# LOCAL-DEV config (human PGUSER, personal MLflow path). Remove it from the
+# deployed source so the container uses only app.yaml env + resource bindings.
+echo "[deploy] removing local-only .env from deployed source"
+databricks workspace delete "$WS_PATH/.env" ${PROFILE_FLAG[@]+"${PROFILE_FLAG[@]}"} 2>/dev/null || true
+
 # 2) Create the App resource if missing. Scopes are NOT set here — the app's
 #    OBO scopes come from `app.yaml`'s `user_authorization.scopes` (incl.
 #    `model-serving`), which `databricks apps deploy` (step 3) applies from the

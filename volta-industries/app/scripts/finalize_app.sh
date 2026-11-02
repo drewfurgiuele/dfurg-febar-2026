@@ -109,6 +109,10 @@ template_path, out_path = sys.argv[2], sys.argv[3]
 # harvested resources JSON.
 env_lines = [
     ("NODE_ENV", "production"),
+    # Route the agent through the Unity AI Gateway (static path appended to the
+    # workspace URL; the model name is composed in config/app.json from
+    # DEMO_CATALOG). Unset would default to `serving-endpoints` (Foundation Models).
+    ("AGENT_BASE_PATH", "ai-gateway/openai/v1"),
     # binding-derived (the platform injects these from databricks.yml's
     # apps.<key>.resources bindings — keep as value_from)
     ("__VALUEFROM__DATABRICKS_WAREHOUSE_ID", "sql-warehouse"),
