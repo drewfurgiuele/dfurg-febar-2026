@@ -8,11 +8,10 @@
       "aibi-dashboards",
       "genie",
       "databricks-apps",
-      "lakebase"
-    ],
-    "optional": [
+      "lakebase",
       "ml-training-serving"
     ],
+    "optional": [],
     "talking_track": [
       "lakeflow-connect",
       "unity-catalog",
@@ -38,6 +37,10 @@
     "dashboard_id": "01f1b8e2276119a996fd855c1c89828d",
     "dashboard_name": "Volta Plant Floor",
     "genie_space_id": "01f1b8e278181c04accc3f3ebce92d22",
-    "genie_space_name": "Volta Plant Floor"
+    "genie_space_name": "Volta Plant Floor",
+    "ml_model_name": "dfurg_febar_catalog.volta_industrial.failure_recommender",
+    "mlflow_experiment_path": "/Workspace/Users/drew.furgiuele@databricks.com/volta/experiments/failure_recommender",
+    "ml_job_name": "[Workshop] Volta Industrial \u2014 train + score maintenance recommender",
+    "ml_job_id": "389170895255201"
   }
 }

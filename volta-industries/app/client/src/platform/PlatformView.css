@@ -284,7 +284,7 @@
 }
 
 .dx-hero-title {
-  font-family: var(--font-display, serif);
+  font-family: var(--font-display, sans-serif);
   font-size: clamp(2rem, 4.5vw, 3.25rem);
   font-weight: 600;
   letter-spacing: -0.02em;
@@ -379,7 +379,7 @@
 }
 
 .dx-layer-title {
-  font-family: var(--font-display, serif);
+  font-family: var(--font-display, sans-serif);
   font-size: 1.95rem;
   font-weight: 600;
   letter-spacing: -0.015em;
@@ -577,7 +577,7 @@
 }
 
 .dx-closing-text strong {
-  font-family: var(--font-display, serif);
+  font-family: var(--font-display, sans-serif);
   font-size: 1.3rem;
   font-weight: 600;
   color: var(--foreground);

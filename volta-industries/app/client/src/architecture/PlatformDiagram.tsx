@@ -279,14 +279,14 @@ export function PlatformDiagram() {
   const href = (u: string) => (u ? u : undefined);
 
   return (
-    <section className="pd-root" aria-label="LuxeBeauty on the Databricks Platform">
+    <section className="pd-root" aria-label="Volta Industries on the Databricks Platform">
       <style>{CSS}</style>
       <div className="pd-wrap">
         <div className="pd-hero">
           <div className="pd-brand">Databricks Platform</div>
-          <div className="pd-kick">LuxeBeauty · Returns Intelligence</div>
+          <div className="pd-kick">Volta Industries · Returns Intelligence</div>
           <h2>
-            Running LuxeBeauty Returns on the{' '}
+            Running Volta Industries Returns on the{' '}
             <span className="pd-hl">Databricks Platform</span>
           </h2>
         </div>

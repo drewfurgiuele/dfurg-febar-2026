@@ -82,6 +82,34 @@ resources:
               - pandas
               - faker
 
+    volta_ml_maintenance:
+      name: "[Workshop] Volta Industrial — train + score maintenance recommender"
+      description: "Refreshes the volta_plant_floor pipeline, then trains failure_recommender (XGBoost + Optuna), promotes @prod, and overwrites gold_maintenance_recommendations. See specifications/03-ml-maintenance.md."
+      tasks:
+        - task_key: refresh_pipeline
+          pipeline_task:
+            pipeline_id: ${resources.pipelines.volta_plant_floor.id}
+        - task_key: train_score
+          depends_on:
+            - task_key: refresh_pipeline
+          notebook_task:
+            notebook_path: ./transformation/maintenance_train_score.py
+            base_parameters:
+              catalog: ${var.catalog}
+              schema: ${resources.schemas.demo_schema.name}
+              experiment_path: /Workspace/Users/${workspace.current_user.userName}/volta/experiments/failure_recommender
+          environment_key: ml_env
+      environments:
+        - environment_key: ml_env
+          spec:
+            environment_version: "3"
+            dependencies:
+              - mlflow>=3.1
+              - xgboost
+              - optuna
+              - scikit-learn
+              - pandas
+
 targets:
   dev:
     mode: development

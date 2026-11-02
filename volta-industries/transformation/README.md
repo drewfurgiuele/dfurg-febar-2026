@@ -7,7 +7,9 @@ that turns the raw parquet (in the `raw_data` volume, written by
 `gold_maintenance_outcomes`, `gold_maintenance_recommendations`, the `ai_classify`
 failure signal, …).
 
-If you take the OPTIONAL ML path (`../specifications/03-ml-maintenance.md`), the
-`maintenance_train_score.py` notebook also lives here.
+This build takes the ML path (`../specifications/03-ml-maintenance.md`): the pipeline
+no longer builds `gold_maintenance_recommendations`. `maintenance_train_score.py` trains
+`failure_recommender`, scores `gold_open_atrisk`, and writes that table. Run it with the
+bundle job `volta_ml_maintenance`, which refreshes the pipeline first.
 
 This folder ships empty — building the pipeline is Milestone 1.

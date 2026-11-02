@@ -111,7 +111,7 @@ FROM gold_line_status
 WHERE risk_band IN ('critical', 'elevated', 'watch');
 
 -- gold_maintenance_outcomes — maintenance history, one row per decision + features + label.
--- Heuristic-coefficient source + OPTIONAL ML training table (03-ml-maintenance.md).
+-- Training table for the failure_recommender model (03-ml-maintenance.md).
 CREATE OR REFRESH MATERIALIZED VIEW gold_maintenance_outcomes
 COMMENT 'One row per historical maintenance decision with outcome (label: downtime_cost_avoided_usd).'
 AS
@@ -123,70 +123,6 @@ SELECT
   initiated_date
 FROM silver_maintenance;
 
--- gold_maintenance_recommendations — the ranked action per at-risk line, built by the HEURISTIC.
--- part_local is the key lever: expediting a non-local part is slow AND costly, so pulling now
--- wins for the hero (LINE-0004, non-local part). ML (optional) can overwrite this same table.
--- Columns match 03-ml-maintenance.md inference shape so nothing downstream changes.
-CREATE OR REFRESH MATERIALIZED VIEW gold_maintenance_recommendations
-COMMENT 'Ranked maintenance action per at-risk line (heuristic): recommended_action + predicted values + action_ranking JSON.'
-AS
-WITH base AS (
-  SELECT
-    line_id,
-    failure_risk_score,
-    part_local,
-    COALESCE(part_unit_cost_usd, 500.0)  AS puc,
-    COALESCE(part_lead_time_days, 7)      AS ltd
-  FROM gold_open_atrisk
-),
-calc AS (
-  SELECT
-    line_id, failure_risk_score, part_local,
-    -- stop = 4h unplanned @ $22K/hr
-    failure_risk_score * 88000.0 AS pull_avoided,
-    40000.0 AS pull_cost,
-    8000.0 AS run_avoided,
-    failure_risk_score * 88000.0 * (CASE WHEN part_local THEN 0.6 ELSE 1.0 END) AS run_cost,
-    failure_risk_score * 88000.0 * (CASE WHEN part_local THEN 0.6 ELSE 0.3 END) AS exp_avoided,
-    (CASE WHEN part_local THEN puc * 2 + 400 ELSE puc * 3 + ltd * 22000.0 END) AS exp_cost
-  FROM base
-),
-nets AS (
-  SELECT *,
-    pull_avoided - pull_cost AS pull_net,
-    run_avoided  - run_cost  AS run_net,
-    exp_avoided  - exp_cost  AS exp_net
-  FROM calc
-),
-ranked AS (
-  SELECT *,
-    CASE
-      WHEN pull_net >= run_net AND pull_net >= exp_net THEN 'pull_now'
-      WHEN exp_net  >= run_net AND exp_net  >= pull_net THEN 'expedite_parts_and_run'
-      ELSE 'run_to_shift_end'
-    END AS recommended_action
-  FROM nets
-)
-SELECT
-  line_id,
-  recommended_action,
-  ROUND(CASE recommended_action
-    WHEN 'pull_now' THEN pull_avoided
-    WHEN 'expedite_parts_and_run' THEN exp_avoided
-    ELSE run_avoided END, 2) AS predicted_downtime_cost_avoided_usd,
-  -- alias the app's Lakebase mirror expects (server/db/sync.ts selects predicted_downtime_cost_usd)
-  ROUND(CASE recommended_action
-    WHEN 'pull_now' THEN pull_avoided
-    WHEN 'expedite_parts_and_run' THEN exp_avoided
-    ELSE run_avoided END, 2) AS predicted_downtime_cost_usd,
-  ROUND(CASE recommended_action
-    WHEN 'pull_now' THEN pull_net
-    WHEN 'expedite_parts_and_run' THEN exp_net
-    ELSE run_net END, 2) AS predicted_net_value_usd,
-  to_json(array(
-    named_struct('action', 'pull_now',               'avoided', ROUND(pull_avoided, 2), 'cost', ROUND(pull_cost, 2), 'net', ROUND(pull_net, 2)),
-    named_struct('action', 'run_to_shift_end',        'avoided', ROUND(run_avoided, 2),  'cost', ROUND(run_cost, 2),  'net', ROUND(run_net, 2)),
-    named_struct('action', 'expedite_parts_and_run',  'avoided', ROUND(exp_avoided, 2),  'cost', ROUND(exp_cost, 2),  'net', ROUND(exp_net, 2))
-  )) AS action_ranking,
-  current_timestamp() AS scored_at
-FROM ranked;
+-- gold_maintenance_recommendations is NOT built here: the ML notebook
+-- transformation/maintenance_train_score.py trains on gold_maintenance_outcomes, scores
+-- gold_open_atrisk, and writes it as a Delta table (job volta_ml_maintenance).

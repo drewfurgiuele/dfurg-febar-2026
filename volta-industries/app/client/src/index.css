@@ -5,13 +5,13 @@
 
 @plugin "@tailwindcss/typography";
 
-/* Google Fonts (Fraunces + Geist + Geist Mono) are loaded via <link>
+/* Google Fonts (Space Grotesk + Geist + Geist Mono) are loaded via <link>
  * tags in index.html so the PostCSS `@import must precede all other
  * statements` warning doesn't fire against Tailwind v4's ordering. */
 
 @theme {
   --font-sans: "Geist", ui-sans-serif, system-ui, sans-serif;
-  --font-display: "Fraunces", Georgia, serif;
+  --font-display: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
   --font-mono: "Geist Mono", ui-monospace, SFMono-Regular, monospace;
 }
 
@@ -227,7 +227,6 @@ h2,
 h3,
 .display {
   font-family: var(--font-display);
-  font-feature-settings: "ss01";
   letter-spacing: -0.01em;
 }
 
