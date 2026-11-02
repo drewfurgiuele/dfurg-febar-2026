@@ -1,0 +1,67 @@
+{
+  "creator_user_name": "drew.furgiuele@databricks.com",
+  "effective_publishing_mode": "DEFAULT_PUBLISHING_MODE",
+  "effective_serverless_compute_id": "8981ceb8-c32e-33c1-bdce-7c8d9ba6cc27",
+  "last_modified": 1790341096842,
+  "latest_updates": [
+    {
+      "creation_time": "2026-11-02T15:01:35.183Z",
+      "state": "COMPLETED",
+      "update_id": "6943c0c5-76df-4a5b-9575-da6e3c5ac510"
+    },
+    {
+      "creation_time": "2026-11-02T14:54:34.233Z",
+      "state": "COMPLETED",
+      "update_id": "6499c15f-a9ae-4e32-8bbd-9b01c0e8792a"
+    },
+    {
+      "creation_time": "2026-09-25T13:56:43.242Z",
+      "state": "COMPLETED",
+      "update_id": "19e03d04-7ec6-446b-80f2-050e429beb1f"
+    },
+    {
+      "creation_time": "2026-09-25T13:01:52.549Z",
+      "state": "COMPLETED",
+      "update_id": "bb58e490-cc9b-4f20-9f44-eea9f1021c41"
+    },
+    {
+      "creation_time": "2026-09-25T12:58:26.188Z",
+      "state": "COMPLETED",
+      "update_id": "9afb90c4-6f84-469f-8041-abbaec2f6f70"
+    }
+  ],
+  "name": "volta_plant_floor",
+  "pipeline_id": "636ad93c-bfde-4b5e-a2f5-6b253e9ceffa",
+  "run_as_user_name": "drew.furgiuele@databricks.com",
+  "spec": {
+    "catalog": "dfurg_febar_catalog",
+    "channel": "CURRENT",
+    "configuration": {
+      "catalog": "dfurg_febar_catalog",
+      "schema": "volta_industrial"
+    },
+    "deployment": {
+      "kind": "BUNDLE",
+      "metadata_file_path": "/Workspace/Users/drew.furgiuele@databricks.com/.bundle/workshop-volta-industrial/prod/state/metadata.json"
+    },
+    "edition": "ADVANCED",
+    "id": "636ad93c-bfde-4b5e-a2f5-6b253e9ceffa",
+    "libraries": [
+      {
+        "file": {
+          "path": "/Workspace/Users/drew.furgiuele@databricks.com/.bundle/workshop-volta-industrial/prod/files/transformation/01_silver.sql"
+        }
+      },
+      {
+        "file": {
+          "path": "/Workspace/Users/drew.furgiuele@databricks.com/.bundle/workshop-volta-industrial/prod/files/transformation/02_gold.sql"
+        }
+      }
+    ],
+    "name": "volta_plant_floor",
+    "photon": true,
+    "schema": "volta_industrial",
+    "serverless": true
+  },
+  "state": "IDLE"
+}

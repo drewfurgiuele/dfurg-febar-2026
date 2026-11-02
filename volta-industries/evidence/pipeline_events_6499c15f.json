@@ -1,0 +1,2010 @@
+[
+  {
+    "event_type": "user_action",
+    "id": "51144a40-d6cd-11f1-a7d8-00000a13a7f0",
+    "level": "INFO",
+    "maturity_level": "STABLE",
+    "message": "Principal 'drew.furgiuele@databricks.com' started an update.",
+    "origin": {
+      "cloud": "AWS",
+      "org_id": 7474660769753598,
+      "pipeline_id": "636ad93c-bfde-4b5e-a2f5-6b253e9ceffa",
+      "pipeline_name": "volta_plant_floor",
+      "region": "us-east-1",
+      "request_id": "6499c15f-a9ae-4e32-8bbd-9b01c0e8792a",
+      "update_id": "6499c15f-a9ae-4e32-8bbd-9b01c0e8792a"
+    },
+    "sequence": {
+      "control_plane_seq_no": 1793631274213001
+    },
+    "timestamp": "2026-11-02T14:54:34.212Z"
+  },
+  {
+    "event_type": "create_update",
+    "id": "5119c880-d6cd-11f1-a7d8-00000a13a7f0",
+    "level": "INFO",
+    "maturity_level": "STABLE",
+    "message": "Update 6499c1 started by JOB_TASK.",
+    "origin": {
+      "cloud": "AWS",
+      "org_id": 7474660769753598,
+      "pipeline_id": "636ad93c-bfde-4b5e-a2f5-6b253e9ceffa",
+      "pipeline_name": "volta_plant_floor",
+      "region": "us-east-1",
+      "request_id": "6499c15f-a9ae-4e32-8bbd-9b01c0e8792a",
+      "update_id": "6499c15f-a9ae-4e32-8bbd-9b01c0e8792a"
+    },
+    "sequence": {
+      "control_plane_seq_no": 1793631274252001
+    },
+    "timestamp": "2026-11-02T14:54:34.233Z"
+  },
+  {
+    "event_type": "update_progress",
+    "id": "52cafaf0-d6cd-11f1-a7f5-00000a13c92e",
+    "level": "INFO",
+    "maturity_level": "STABLE",
+    "message": "Update 6499c1 is WAITING_FOR_RESOURCES.",
+    "origin": {
+      "cloud": "AWS",
+      "cluster_id": "1102-145436-p2qny8mn-v2n",
+      "org_id": 7474660769753598,
+      "pipeline_id": "636ad93c-bfde-4b5e-a2f5-6b253e9ceffa",
+      "pipeline_name": "volta_plant_floor",
+      "region": "us-east-1",
+      "request_id": "6499c15f-a9ae-4e32-8bbd-9b01c0e8792a",
+      "update_id": "6499c15f-a9ae-4e32-8bbd-9b01c0e8792a"
+    },
+    "sequence": {
+      "control_plane_seq_no": 1793631277088001
+    },
+    "timestamp": "2026-11-02T14:54:37.087Z"
+  },
+  {
+    "event_type": "runtime_details",
+    "id": "55dc0b80-d6cd-11f1-a7f5-00000a13c92e",
+    "level": "INFO",
+    "maturity_level": "EVOLVING",
+    "message": "Resolved runtime environment details for update 6499c1.",
+    "origin": {
+      "cloud": "AWS",
+      "org_id": 7474660769753598,
+      "pipeline_id": "636ad93c-bfde-4b5e-a2f5-6b253e9ceffa",
+      "pipeline_name": "volta_plant_floor",
+      "region": "us-east-1",
+      "request_id": "6499c15f-a9ae-4e32-8bbd-9b01c0e8792a",
+      "update_id": "6499c15f-a9ae-4e32-8bbd-9b01c0e8792a"
+    },
+    "sequence": {
+      "control_plane_seq_no": 1793631282235001
+    },
+    "timestamp": "2026-11-02T14:54:42.232Z"
+  },
+  {
+    "event_type": "update_progress",
+    "id": "5ac31490-d6cd-11f1-a967-7a30648d51ab",
+    "level": "INFO",
+    "maturity_level": "STABLE",
+    "message": "Update 6499c1 is INITIALIZING.",
+    "origin": {
+      "cloud": "AWS",
+      "cluster_id": "1102-145436-p2qny8mn-v2n",
+      "org_id": 7474660769753598,
+      "pipeline_id": "636ad93c-bfde-4b5e-a2f5-6b253e9ceffa",
+      "pipeline_name": "volta_plant_floor",
+      "region": "us-east-1",
+      "request_id": "6499c15f-a9ae-4e32-8bbd-9b01c0e8792a",
+      "update_id": "6499c15f-a9ae-4e32-8bbd-9b01c0e8792a"
+    },
+    "sequence": {
+      "control_plane_seq_no": 1793631293671001,
+      "data_plane_id": {
+        "instance": "execution",
+        "seq_no": 1793631288098001
+      }
+    },
+    "timestamp": "2026-11-02T14:54:50.457Z"
+  },
+  {
+    "event_type": "update_progress",
+    "id": "645e7df0-d6cd-11f1-a967-7a30648d51ab",
+    "level": "INFO",
+    "maturity_level": "STABLE",
+    "message": "Update 6499c1 is SETTING_UP_TABLES.",
+    "origin": {
+      "cloud": "AWS",
+      "cluster_id": "1102-145436-p2qny8mn-v2n",
+      "org_id": 7474660769753598,
+      "pipeline_id": "636ad93c-bfde-4b5e-a2f5-6b253e9ceffa",
+      "pipeline_name": "volta_plant_floor",
+      "region": "us-east-1",
+      "request_id": "6499c15f-a9ae-4e32-8bbd-9b01c0e8792a",
+      "update_id": "6499c15f-a9ae-4e32-8bbd-9b01c0e8792a"
+    },
+    "sequence": {
+      "control_plane_seq_no": 1793631308920001,
+      "data_plane_id": {
+        "instance": "execution",
+        "seq_no": 1793631288098010
+      }
+    },
+    "timestamp": "2026-11-02T14:55:06.575Z"
+  },
+  {
+    "event_type": "flow_definition",
+    "id": "659661b0-d6cd-11f1-a967-7a30648d51ab",
+    "level": "INFO",
+    "maturity_level": "STABLE",
+    "message": "Flow `dfurg_febar_catalog`.`volta_industrial`.`silver_work_orders` defined as MATERIALIZED_VIEW.",
+    "origin": {
+      "cloud": "AWS",
+      "cluster_id": "1102-145436-p2qny8mn-v2n",
+      "flow_name": "dfurg_febar_catalog.volta_industrial.silver_work_orders",
+      "org_id": 7474660769753598,
+      "pipeline_id": "636ad93c-bfde-4b5e-a2f5-6b253e9ceffa",
+      "pipeline_name": "volta_plant_floor",
+      "region": "us-east-1",
+      "request_id": "6499c15f-a9ae-4e32-8bbd-9b01c0e8792a",
+      "update_id": "6499c15f-a9ae-4e32-8bbd-9b01c0e8792a"
+    },
+    "sequence": {
+      "control_plane_seq_no": 1793631308922001,
+      "data_plane_id": {
+        "instance": "execution",
+        "seq_no": 1793631288098019
+      }
+    },
+    "timestamp": "2026-11-02T14:55:08.619Z"
+  },
+  {
+    "event_type": "flow_definition",
+    "id": "659bdff0-d6cd-11f1-a967-7a30648d51ab",
+    "level": "INFO",
+    "maturity_level": "STABLE",
+    "message": "Flow `dfurg_febar_catalog`.`volta_industrial`.`silver_maintenance` defined as MATERIALIZED_VIEW.",
+    "origin": {
+      "cloud": "AWS",
+      "cluster_id": "1102-145436-p2qny8mn-v2n",
+      "flow_name": "dfurg_febar_catalog.volta_industrial.silver_maintenance",
+      "org_id": 7474660769753598,
+      "pipeline_id": "636ad93c-bfde-4b5e-a2f5-6b253e9ceffa",
+      "pipeline_name": "volta_plant_floor",
+      "region": "us-east-1",
+      "request_id": "6499c15f-a9ae-4e32-8bbd-9b01c0e8792a",
+      "update_id": "6499c15f-a9ae-4e32-8bbd-9b01c0e8792a"
+    },
+    "sequence": {
+      "control_plane_seq_no": 1793631308924001,
+      "data_plane_id": {
+        "instance": "execution",
+        "seq_no": 1793631288098020
+      }
+    },
+    "timestamp": "2026-11-02T14:55:08.655Z"
+  },
+  {
+    "event_type": "flow_definition",
+    "id": "659db4b0-d6cd-11f1-a967-7a30648d51ab",
+    "level": "INFO",
+    "maturity_level": "STABLE",
+    "message": "Flow `dfurg_febar_catalog`.`volta_industrial`.`silver_telemetry` defined as MATERIALIZED_VIEW.",
+    "origin": {
+      "cloud": "AWS",
+      "cluster_id": "1102-145436-p2qny8mn-v2n",
+      "flow_name": "dfurg_febar_catalog.volta_industrial.silver_telemetry",
+      "org_id": 7474660769753598,
+      "pipeline_id": "636ad93c-bfde-4b5e-a2f5-6b253e9ceffa",
+      "pipeline_name": "volta_plant_floor",
+      "region": "us-east-1",
+      "request_id": "6499c15f-a9ae-4e32-8bbd-9b01c0e8792a",
+      "update_id": "6499c15f-a9ae-4e32-8bbd-9b01c0e8792a"
+    },
+    "sequence": {
+      "control_plane_seq_no": 1793631308926001,
+      "data_plane_id": {
+        "instance": "execution",
+        "seq_no": 1793631288098021
+      }
+    },
+    "timestamp": "2026-11-02T14:55:08.667Z"
+  },
+  {
+    "event_type": "flow_definition",
+    "id": "659f3b50-d6cd-11f1-a967-7a30648d51ab",
+    "level": "INFO",
+    "maturity_level": "STABLE",
+    "message": "Flow `dfurg_febar_catalog`.`volta_industrial`.`note_risk_flags` defined as MATERIALIZED_VIEW.",
+    "origin": {
+      "cloud": "AWS",
+      "cluster_id": "1102-145436-p2qny8mn-v2n",
+      "flow_name": "dfurg_febar_catalog.volta_industrial.note_risk_flags",
+      "org_id": 7474660769753598,
+      "pipeline_id": "636ad93c-bfde-4b5e-a2f5-6b253e9ceffa",
+      "pipeline_name": "volta_plant_floor",
+      "region": "us-east-1",
+      "request_id": "6499c15f-a9ae-4e32-8bbd-9b01c0e8792a",
+      "update_id": "6499c15f-a9ae-4e32-8bbd-9b01c0e8792a"
+    },
+    "sequence": {
+      "control_plane_seq_no": 1793631308927001,
+      "data_plane_id": {
+        "instance": "execution",
+        "seq_no": 1793631288098022
+      }
+    },
+    "timestamp": "2026-11-02T14:55:08.677Z"
+  },
+  {
+    "event_type": "flow_definition",
+    "id": "65a04cc0-d6cd-11f1-a967-7a30648d51ab",
+    "level": "INFO",
+    "maturity_level": "STABLE",
+    "message": "Flow `dfurg_febar_catalog`.`volta_industrial`.`gold_maintenance_outcomes` defined as MATERIALIZED_VIEW.",
+    "origin": {
+      "cloud": "AWS",
+      "cluster_id": "1102-145436-p2qny8mn-v2n",
+      "flow_name": "dfurg_febar_catalog.volta_industrial.gold_maintenance_outcomes",
+      "org_id": 7474660769753598,
+      "pipeline_id": "636ad93c-bfde-4b5e-a2f5-6b253e9ceffa",
+      "pipeline_name": "volta_plant_floor",
+      "region": "us-east-1",
+      "request_id": "6499c15f-a9ae-4e32-8bbd-9b01c0e8792a",
+      "update_id": "6499c15f-a9ae-4e32-8bbd-9b01c0e8792a"
+    },
+    "sequence": {
+      "control_plane_seq_no": 1793631308929001,
+      "data_plane_id": {
+        "instance": "execution",
+        "seq_no": 1793631288098023
+      }
+    },
+    "timestamp": "2026-11-02T14:55:08.684Z"
+  },
+  {
+    "event_type": "flow_definition",
+    "id": "65a0e900-d6cd-11f1-a967-7a30648d51ab",
+    "level": "INFO",
+    "maturity_level": "STABLE",
+    "message": "Flow `dfurg_febar_catalog`.`volta_industrial`.`silver_risk` defined as MATERIALIZED_VIEW.",
+    "origin": {
+      "cloud": "AWS",
+      "cluster_id": "1102-145436-p2qny8mn-v2n",
+      "flow_name": "dfurg_febar_catalog.volta_industrial.silver_risk",
+      "org_id": 7474660769753598,
+      "pipeline_id": "636ad93c-bfde-4b5e-a2f5-6b253e9ceffa",
+      "pipeline_name": "volta_plant_floor",
+      "region": "us-east-1",
+      "request_id": "6499c15f-a9ae-4e32-8bbd-9b01c0e8792a",
+      "update_id": "6499c15f-a9ae-4e32-8bbd-9b01c0e8792a"
+    },
+    "sequence": {
+      "control_plane_seq_no": 1793631308931001,
+      "data_plane_id": {
+        "instance": "execution",
+        "seq_no": 1793631288098024
+      }
+    },
+    "timestamp": "2026-11-02T14:55:08.688Z"
+  },
+  {
+    "event_type": "flow_definition",
+    "id": "65a24890-d6cd-11f1-a967-7a30648d51ab",
+    "level": "INFO",
+    "maturity_level": "STABLE",
+    "message": "Flow `dfurg_febar_catalog`.`volta_industrial`.`gold_line_status` defined as MATERIALIZED_VIEW.",
+    "origin": {
+      "cloud": "AWS",
+      "cluster_id": "1102-145436-p2qny8mn-v2n",
+      "flow_name": "dfurg_febar_catalog.volta_industrial.gold_line_status",
+      "org_id": 7474660769753598,
+      "pipeline_id": "636ad93c-bfde-4b5e-a2f5-6b253e9ceffa",
+      "pipeline_name": "volta_plant_floor",
+      "region": "us-east-1",
+      "request_id": "6499c15f-a9ae-4e32-8bbd-9b01c0e8792a",
+      "update_id": "6499c15f-a9ae-4e32-8bbd-9b01c0e8792a"
+    },
+    "sequence": {
+      "control_plane_seq_no": 1793631308933001,
+      "data_plane_id": {
+        "instance": "execution",
+        "seq_no": 1793631288098025
+      }
+    },
+    "timestamp": "2026-11-02T14:55:08.697Z"
+  },
+  {
+    "event_type": "flow_definition",
+    "id": "65a35a00-d6cd-11f1-a967-7a30648d51ab",
+    "level": "INFO",
+    "maturity_level": "STABLE",
+    "message": "Flow `dfurg_febar_catalog`.`volta_industrial`.`gold_open_atrisk` defined as MATERIALIZED_VIEW.",
+    "origin": {
+      "cloud": "AWS",
+      "cluster_id": "1102-145436-p2qny8mn-v2n",
+      "flow_name": "dfurg_febar_catalog.volta_industrial.gold_open_atrisk",
+      "org_id": 7474660769753598,
+      "pipeline_id": "636ad93c-bfde-4b5e-a2f5-6b253e9ceffa",
+      "pipeline_name": "volta_plant_floor",
+      "region": "us-east-1",
+      "request_id": "6499c15f-a9ae-4e32-8bbd-9b01c0e8792a",
+      "update_id": "6499c15f-a9ae-4e32-8bbd-9b01c0e8792a"
+    },
+    "sequence": {
+      "control_plane_seq_no": 1793631308935001,
+      "data_plane_id": {
+        "instance": "execution",
+        "seq_no": 1793631288098026
+      }
+    },
+    "timestamp": "2026-11-02T14:55:08.704Z"
+  },
+  {
+    "event_type": "dataset_definition",
+    "id": "65a6b560-d6cd-11f1-a967-7a30648d51ab",
+    "level": "INFO",
+    "maturity_level": "STABLE",
+    "message": "Dataset `dfurg_febar_catalog`.`volta_industrial`.`silver_telemetry` defined as MATERIALIZED_VIEW.",
+    "origin": {
+      "cloud": "AWS",
+      "cluster_id": "1102-145436-p2qny8mn-v2n",
+      "dataset_name": "dfurg_febar_catalog.volta_industrial.silver_telemetry",
+      "org_id": 7474660769753598,
+      "pipeline_id": "636ad93c-bfde-4b5e-a2f5-6b253e9ceffa",
+      "pipeline_name": "volta_plant_floor",
+      "region": "us-east-1",
+      "request_id": "6499c15f-a9ae-4e32-8bbd-9b01c0e8792a",
+      "update_id": "6499c15f-a9ae-4e32-8bbd-9b01c0e8792a"
+    },
+    "sequence": {
+      "control_plane_seq_no": 1793631308937001,
+      "data_plane_id": {
+        "instance": "execution",
+        "seq_no": 1793631288098027
+      }
+    },
+    "timestamp": "2026-11-02T14:55:08.726Z"
+  },
+  {
+    "event_type": "dataset_definition",
+    "id": "65a97480-d6cd-11f1-a967-7a30648d51ab",
+    "level": "INFO",
+    "maturity_level": "STABLE",
+    "message": "Dataset `dfurg_febar_catalog`.`volta_industrial`.`gold_maintenance_outcomes` defined as MATERIALIZED_VIEW.",
+    "origin": {
+      "cloud": "AWS",
+      "cluster_id": "1102-145436-p2qny8mn-v2n",
+      "dataset_name": "dfurg_febar_catalog.volta_industrial.gold_maintenance_outcomes",
+      "org_id": 7474660769753598,
+      "pipeline_id": "636ad93c-bfde-4b5e-a2f5-6b253e9ceffa",
+      "pipeline_name": "volta_plant_floor",
+      "region": "us-east-1",
+      "request_id": "6499c15f-a9ae-4e32-8bbd-9b01c0e8792a",
+      "update_id": "6499c15f-a9ae-4e32-8bbd-9b01c0e8792a"
+    },
+    "sequence": {
+      "control_plane_seq_no": 1793631308939001,
+      "data_plane_id": {
+        "instance": "execution",
+        "seq_no": 1793631288098028
+      }
+    },
+    "timestamp": "2026-11-02T14:55:08.744Z"
+  },
+  {
+    "event_type": "dataset_definition",
+    "id": "65aafb20-d6cd-11f1-a967-7a30648d51ab",
+    "level": "INFO",
+    "maturity_level": "STABLE",
+    "message": "Dataset `dfurg_febar_catalog`.`volta_industrial`.`gold_line_status` defined as MATERIALIZED_VIEW.",
+    "origin": {
+      "cloud": "AWS",
+      "cluster_id": "1102-145436-p2qny8mn-v2n",
+      "dataset_name": "dfurg_febar_catalog.volta_industrial.gold_line_status",
+      "org_id": 7474660769753598,
+      "pipeline_id": "636ad93c-bfde-4b5e-a2f5-6b253e9ceffa",
+      "pipeline_name": "volta_plant_floor",
+      "region": "us-east-1",
+      "request_id": "6499c15f-a9ae-4e32-8bbd-9b01c0e8792a",
+      "update_id": "6499c15f-a9ae-4e32-8bbd-9b01c0e8792a"
+    },
+    "sequence": {
+      "control_plane_seq_no": 1793631308941001,
+      "data_plane_id": {
+        "instance": "execution",
+        "seq_no": 1793631288098029
+      }
+    },
+    "timestamp": "2026-11-02T14:55:08.754Z"
+  },
+  {
+    "event_type": "dataset_definition",
+    "id": "65ac81c0-d6cd-11f1-a967-7a30648d51ab",
+    "level": "INFO",
+    "maturity_level": "STABLE",
+    "message": "Dataset `dfurg_febar_catalog`.`volta_industrial`.`note_risk_flags` defined as MATERIALIZED_VIEW.",
+    "origin": {
+      "cloud": "AWS",
+      "cluster_id": "1102-145436-p2qny8mn-v2n",
+      "dataset_name": "dfurg_febar_catalog.volta_industrial.note_risk_flags",
+      "org_id": 7474660769753598,
+      "pipeline_id": "636ad93c-bfde-4b5e-a2f5-6b253e9ceffa",
+      "pipeline_name": "volta_plant_floor",
+      "region": "us-east-1",
+      "request_id": "6499c15f-a9ae-4e32-8bbd-9b01c0e8792a",
+      "update_id": "6499c15f-a9ae-4e32-8bbd-9b01c0e8792a"
+    },
+    "sequence": {
+      "control_plane_seq_no": 1793631308942001,
+      "data_plane_id": {
+        "instance": "execution",
+        "seq_no": 1793631288098030
+      }
+    },
+    "timestamp": "2026-11-02T14:55:08.764Z"
+  },
+  {
+    "event_type": "dataset_definition",
+    "id": "65ae0860-d6cd-11f1-a967-7a30648d51ab",
+    "level": "INFO",
+    "maturity_level": "STABLE",
+    "message": "Dataset `dfurg_febar_catalog`.`volta_industrial`.`gold_open_atrisk` defined as MATERIALIZED_VIEW.",
+    "origin": {
+      "cloud": "AWS",
+      "cluster_id": "1102-145436-p2qny8mn-v2n",
+      "dataset_name": "dfurg_febar_catalog.volta_industrial.gold_open_atrisk",
+      "org_id": 7474660769753598,
+      "pipeline_id": "636ad93c-bfde-4b5e-a2f5-6b253e9ceffa",
+      "pipeline_name": "volta_plant_floor",
+      "region": "us-east-1",
+      "request_id": "6499c15f-a9ae-4e32-8bbd-9b01c0e8792a",
+      "update_id": "6499c15f-a9ae-4e32-8bbd-9b01c0e8792a"
+    },
+    "sequence": {
+      "control_plane_seq_no": 1793631308944001,
+      "data_plane_id": {
+        "instance": "execution",
+        "seq_no": 1793631288098031
+      }
+    },
+    "timestamp": "2026-11-02T14:55:08.774Z"
+  },
+  {
+    "event_type": "dataset_definition",
+    "id": "65af8f00-d6cd-11f1-a967-7a30648d51ab",
+    "level": "INFO",
+    "maturity_level": "STABLE",
+    "message": "Dataset `dfurg_febar_catalog`.`volta_industrial`.`silver_work_orders` defined as MATERIALIZED_VIEW.",
+    "origin": {
+      "cloud": "AWS",
+      "cluster_id": "1102-145436-p2qny8mn-v2n",
+      "dataset_name": "dfurg_febar_catalog.volta_industrial.silver_work_orders",
+      "org_id": 7474660769753598,
+      "pipeline_id": "636ad93c-bfde-4b5e-a2f5-6b253e9ceffa",
+      "pipeline_name": "volta_plant_floor",
+      "region": "us-east-1",
+      "request_id": "6499c15f-a9ae-4e32-8bbd-9b01c0e8792a",
+      "update_id": "6499c15f-a9ae-4e32-8bbd-9b01c0e8792a"
+    },
+    "sequence": {
+      "control_plane_seq_no": 1793631308946001,
+      "data_plane_id": {
+        "instance": "execution",
+        "seq_no": 1793631288098032
+      }
+    },
+    "timestamp": "2026-11-02T14:55:08.784Z"
+  },
+  {
+    "event_type": "dataset_definition",
+    "id": "65b115a0-d6cd-11f1-a967-7a30648d51ab",
+    "level": "INFO",
+    "maturity_level": "STABLE",
+    "message": "Dataset `dfurg_febar_catalog`.`volta_industrial`.`silver_risk` defined as MATERIALIZED_VIEW.",
+    "origin": {
+      "cloud": "AWS",
+      "cluster_id": "1102-145436-p2qny8mn-v2n",
+      "dataset_name": "dfurg_febar_catalog.volta_industrial.silver_risk",
+      "org_id": 7474660769753598,
+      "pipeline_id": "636ad93c-bfde-4b5e-a2f5-6b253e9ceffa",
+      "pipeline_name": "volta_plant_floor",
+      "region": "us-east-1",
+      "request_id": "6499c15f-a9ae-4e32-8bbd-9b01c0e8792a",
+      "update_id": "6499c15f-a9ae-4e32-8bbd-9b01c0e8792a"
+    },
+    "sequence": {
+      "control_plane_seq_no": 1793631308948001,
+      "data_plane_id": {
+        "instance": "execution",
+        "seq_no": 1793631288098033
+      }
+    },
+    "timestamp": "2026-11-02T14:55:08.794Z"
+  },
+  {
+    "event_type": "dataset_definition",
+    "id": "65b29c40-d6cd-11f1-a967-7a30648d51ab",
+    "level": "INFO",
+    "maturity_level": "STABLE",
+    "message": "Dataset `dfurg_febar_catalog`.`volta_industrial`.`silver_maintenance` defined as MATERIALIZED_VIEW.",
+    "origin": {
+      "cloud": "AWS",
+      "cluster_id": "1102-145436-p2qny8mn-v2n",
+      "dataset_name": "dfurg_febar_catalog.volta_industrial.silver_maintenance",
+      "org_id": 7474660769753598,
+      "pipeline_id": "636ad93c-bfde-4b5e-a2f5-6b253e9ceffa",
+      "pipeline_name": "volta_plant_floor",
+      "region": "us-east-1",
+      "request_id": "6499c15f-a9ae-4e32-8bbd-9b01c0e8792a",
+      "update_id": "6499c15f-a9ae-4e32-8bbd-9b01c0e8792a"
+    },
+    "sequence": {
+      "control_plane_seq_no": 1793631308950001,
+      "data_plane_id": {
+        "instance": "execution",
+        "seq_no": 1793631288098034
+      }
+    },
+    "timestamp": "2026-11-02T14:55:08.804Z"
+  },
+  {
+    "event_type": "dataset_life_cycle",
+    "id": "65ea4e10-d6cd-11f1-a967-7a30648d51ab",
+    "level": "INFO",
+    "maturity_level": "EVOLVING",
+    "message": "Materialized View '`dfurg_febar_catalog`.`volta_industrial`.`gold_maintenance_recommendations`' is no longer defined in the pipeline and has been marked as inactive in Unity Catalog.\n This table will no longer be updated by the pipeline on the next update.\n If you want this table to be updated by the pipeline on the next update,\n you can add the table definition back to the pipeline which will make the table active again.\n If you no longer need this table, running DROP TABLE `dfurg_febar_catalog`.`volta_industrial`.`gold_maintenance_recommendations` will delete the table\n so this no longer appears in the event log.",
+    "origin": {
+      "cloud": "AWS",
+      "cluster_id": "1102-145436-p2qny8mn-v2n",
+      "dataset_name": "dfurg_febar_catalog.volta_industrial.gold_maintenance_recommendations",
+      "org_id": 7474660769753598,
+      "pipeline_id": "636ad93c-bfde-4b5e-a2f5-6b253e9ceffa",
+      "pipeline_name": "volta_plant_floor",
+      "region": "us-east-1",
+      "request_id": "6499c15f-a9ae-4e32-8bbd-9b01c0e8792a",
+      "update_id": "6499c15f-a9ae-4e32-8bbd-9b01c0e8792a"
+    },
+    "sequence": {
+      "control_plane_seq_no": 1793631312144001,
+      "data_plane_id": {
+        "instance": "execution",
+        "seq_no": 1793631288098035
+      }
+    },
+    "timestamp": "2026-11-02T14:55:09.169Z"
+  },
+  {
+    "event_type": "graph_created",
+    "id": "65eb3870-d6cd-11f1-a967-7a30648d51ab",
+    "level": "INFO",
+    "maturity_level": "STABLE",
+    "message": "Dataflow graph successfully loaded.",
+    "origin": {
+      "cloud": "AWS",
+      "cluster_id": "1102-145436-p2qny8mn-v2n",
+      "org_id": 7474660769753598,
+      "pipeline_id": "636ad93c-bfde-4b5e-a2f5-6b253e9ceffa",
+      "pipeline_name": "volta_plant_floor",
+      "region": "us-east-1",
+      "request_id": "6499c15f-a9ae-4e32-8bbd-9b01c0e8792a",
+      "update_id": "6499c15f-a9ae-4e32-8bbd-9b01c0e8792a"
+    },
+    "sequence": {
+      "control_plane_seq_no": 1793631312147001,
+      "data_plane_id": {
+        "instance": "execution",
+        "seq_no": 1793631288098036
+      }
+    },
+    "timestamp": "2026-11-02T14:55:09.175Z"
+  },
+  {
+    "event_type": "update_progress",
+    "id": "65ec22d0-d6cd-11f1-a967-7a30648d51ab",
+    "level": "INFO",
+    "maturity_level": "STABLE",
+    "message": "Update 6499c1 is RUNNING.",
+    "origin": {
+      "cloud": "AWS",
+      "cluster_id": "1102-145436-p2qny8mn-v2n",
+      "org_id": 7474660769753598,
+      "pipeline_id": "636ad93c-bfde-4b5e-a2f5-6b253e9ceffa",
+      "pipeline_name": "volta_plant_floor",
+      "region": "us-east-1",
+      "request_id": "6499c15f-a9ae-4e32-8bbd-9b01c0e8792a",
+      "update_id": "6499c15f-a9ae-4e32-8bbd-9b01c0e8792a"
+    },
+    "sequence": {
+      "control_plane_seq_no": 1793631312149001,
+      "data_plane_id": {
+        "instance": "execution",
+        "seq_no": 1793631288098037
+      }
+    },
+    "timestamp": "2026-11-02T14:55:09.181Z"
+  },
+  {
+    "event_type": "flow_progress",
+    "id": "65eda970-d6cd-11f1-a967-7a30648d51ab",
+    "level": "INFO",
+    "maturity_level": "STABLE",
+    "message": "Flow 'dfurg_febar_catalog.volta_industrial.silver_maintenance' is QUEUED.",
+    "origin": {
+      "cloud": "AWS",
+      "cluster_id": "1102-145436-p2qny8mn-v2n",
+      "flow_name": "dfurg_febar_catalog.volta_industrial.silver_maintenance",
+      "materialization_name": "dfurg_febar_catalog.volta_industrial.__materialization_mat_636ad93c_bfde_4b5e_a2f5_6b253e9ceffa_silver_maintenance_1",
+      "org_id": 7474660769753598,
+      "pipeline_id": "636ad93c-bfde-4b5e-a2f5-6b253e9ceffa",
+      "pipeline_name": "volta_plant_floor",
+      "region": "us-east-1",
+      "request_id": "6499c15f-a9ae-4e32-8bbd-9b01c0e8792a",
+      "update_id": "6499c15f-a9ae-4e32-8bbd-9b01c0e8792a"
+    },
+    "sequence": {
+      "control_plane_seq_no": 1793631312150001,
+      "data_plane_id": {
+        "instance": "execution",
+        "seq_no": 1793631288098038
+      }
+    },
+    "timestamp": "2026-11-02T14:55:09.191Z"
+  },
+  {
+    "event_type": "flow_progress",
+    "id": "65ee6cc0-d6cd-11f1-a967-7a30648d51ab",
+    "level": "INFO",
+    "maturity_level": "STABLE",
+    "message": "Flow 'dfurg_febar_catalog.volta_industrial.silver_work_orders' is QUEUED.",
+    "origin": {
+      "cloud": "AWS",
+      "cluster_id": "1102-145436-p2qny8mn-v2n",
+      "flow_name": "dfurg_febar_catalog.volta_industrial.silver_work_orders",
+      "materialization_name": "dfurg_febar_catalog.volta_industrial.__materialization_mat_636ad93c_bfde_4b5e_a2f5_6b253e9ceffa_silver_work_orders_1",
+      "org_id": 7474660769753598,
+      "pipeline_id": "636ad93c-bfde-4b5e-a2f5-6b253e9ceffa",
+      "pipeline_name": "volta_plant_floor",
+      "region": "us-east-1",
+      "request_id": "6499c15f-a9ae-4e32-8bbd-9b01c0e8792a",
+      "update_id": "6499c15f-a9ae-4e32-8bbd-9b01c0e8792a"
+    },
+    "sequence": {
+      "control_plane_seq_no": 1793631312152001,
+      "data_plane_id": {
+        "instance": "execution",
+        "seq_no": 1793631288098039
+      }
+    },
+    "timestamp": "2026-11-02T14:55:09.196Z"
+  },
+  {
+    "event_type": "flow_progress",
+    "id": "65eebae0-d6cd-11f1-a967-7a30648d51ab",
+    "level": "INFO",
+    "maturity_level": "STABLE",
+    "message": "Flow 'dfurg_febar_catalog.volta_industrial.silver_telemetry' is QUEUED.",
+    "origin": {
+      "cloud": "AWS",
+      "cluster_id": "1102-145436-p2qny8mn-v2n",
+      "flow_name": "dfurg_febar_catalog.volta_industrial.silver_telemetry",
+      "materialization_name": "dfurg_febar_catalog.volta_industrial.__materialization_mat_636ad93c_bfde_4b5e_a2f5_6b253e9ceffa_silver_telemetry_1",
+      "org_id": 7474660769753598,
+      "pipeline_id": "636ad93c-bfde-4b5e-a2f5-6b253e9ceffa",
+      "pipeline_name": "volta_plant_floor",
+      "region": "us-east-1",
+      "request_id": "6499c15f-a9ae-4e32-8bbd-9b01c0e8792a",
+      "update_id": "6499c15f-a9ae-4e32-8bbd-9b01c0e8792a"
+    },
+    "sequence": {
+      "control_plane_seq_no": 1793631312154001,
+      "data_plane_id": {
+        "instance": "execution",
+        "seq_no": 1793631288098040
+      }
+    },
+    "timestamp": "2026-11-02T14:55:09.198Z"
+  },
+  {
+    "event_type": "flow_progress",
+    "id": "65ef3010-d6cd-11f1-a967-7a30648d51ab",
+    "level": "INFO",
+    "maturity_level": "STABLE",
+    "message": "Flow 'dfurg_febar_catalog.volta_industrial.gold_line_status' is QUEUED.",
+    "origin": {
+      "cloud": "AWS",
+      "cluster_id": "1102-145436-p2qny8mn-v2n",
+      "flow_name": "dfurg_febar_catalog.volta_industrial.gold_line_status",
+      "materialization_name": "dfurg_febar_catalog.volta_industrial.__materialization_mat_636ad93c_bfde_4b5e_a2f5_6b253e9ceffa_gold_line_status_1",
+      "org_id": 7474660769753598,
+      "pipeline_id": "636ad93c-bfde-4b5e-a2f5-6b253e9ceffa",
+      "pipeline_name": "volta_plant_floor",
+      "region": "us-east-1",
+      "request_id": "6499c15f-a9ae-4e32-8bbd-9b01c0e8792a",
+      "update_id": "6499c15f-a9ae-4e32-8bbd-9b01c0e8792a"
+    },
+    "sequence": {
+      "control_plane_seq_no": 1793631312156001,
+      "data_plane_id": {
+        "instance": "execution",
+        "seq_no": 1793631288098041
+      }
+    },
+    "timestamp": "2026-11-02T14:55:09.201Z"
+  },
+  {
+    "event_type": "flow_progress",
+    "id": "65ef7e30-d6cd-11f1-a967-7a30648d51ab",
+    "level": "INFO",
+    "maturity_level": "STABLE",
+    "message": "Flow 'dfurg_febar_catalog.volta_industrial.silver_risk' is QUEUED.",
+    "origin": {
+      "cloud": "AWS",
+      "cluster_id": "1102-145436-p2qny8mn-v2n",
+      "flow_name": "dfurg_febar_catalog.volta_industrial.silver_risk",
+      "materialization_name": "dfurg_febar_catalog.volta_industrial.__materialization_mat_636ad93c_bfde_4b5e_a2f5_6b253e9ceffa_silver_risk_1",
+      "org_id": 7474660769753598,
+      "pipeline_id": "636ad93c-bfde-4b5e-a2f5-6b253e9ceffa",
+      "pipeline_name": "volta_plant_floor",
+      "region": "us-east-1",
+      "request_id": "6499c15f-a9ae-4e32-8bbd-9b01c0e8792a",
+      "update_id": "6499c15f-a9ae-4e32-8bbd-9b01c0e8792a"
+    },
+    "sequence": {
+      "control_plane_seq_no": 1793631312158001,
+      "data_plane_id": {
+        "instance": "execution",
+        "seq_no": 1793631288098042
+      }
+    },
+    "timestamp": "2026-11-02T14:55:09.203Z"
+  },
+  {
+    "event_type": "flow_progress",
+    "id": "65efcc50-d6cd-11f1-a967-7a30648d51ab",
+    "level": "INFO",
+    "maturity_level": "STABLE",
+    "message": "Flow 'dfurg_febar_catalog.volta_industrial.gold_open_atrisk' is QUEUED.",
+    "origin": {
+      "cloud": "AWS",
+      "cluster_id": "1102-145436-p2qny8mn-v2n",
+      "flow_name": "dfurg_febar_catalog.volta_industrial.gold_open_atrisk",
+      "materialization_name": "dfurg_febar_catalog.volta_industrial.__materialization_mat_636ad93c_bfde_4b5e_a2f5_6b253e9ceffa_gold_open_atrisk_1",
+      "org_id": 7474660769753598,
+      "pipeline_id": "636ad93c-bfde-4b5e-a2f5-6b253e9ceffa",
+      "pipeline_name": "volta_plant_floor",
+      "region": "us-east-1",
+      "request_id": "6499c15f-a9ae-4e32-8bbd-9b01c0e8792a",
+      "update_id": "6499c15f-a9ae-4e32-8bbd-9b01c0e8792a"
+    },
+    "sequence": {
+      "control_plane_seq_no": 1793631312160001,
+      "data_plane_id": {
+        "instance": "execution",
+        "seq_no": 1793631288098043
+      }
+    },
+    "timestamp": "2026-11-02T14:55:09.205Z"
+  },
+  {
+    "event_type": "flow_progress",
+    "id": "65eff360-d6cd-11f1-a967-7a30648d51ab",
+    "level": "INFO",
+    "maturity_level": "STABLE",
+    "message": "Flow 'dfurg_febar_catalog.volta_industrial.gold_maintenance_outcomes' is QUEUED.",
+    "origin": {
+      "cloud": "AWS",
+      "cluster_id": "1102-145436-p2qny8mn-v2n",
+      "flow_name": "dfurg_febar_catalog.volta_industrial.gold_maintenance_outcomes",
+      "materialization_name": "dfurg_febar_catalog.volta_industrial.__materialization_mat_636ad93c_bfde_4b5e_a2f5_6b253e9ceffa_gold_maintenance_outcomes_1",
+      "org_id": 7474660769753598,
+      "pipeline_id": "636ad93c-bfde-4b5e-a2f5-6b253e9ceffa",
+      "pipeline_name": "volta_plant_floor",
+      "region": "us-east-1",
+      "request_id": "6499c15f-a9ae-4e32-8bbd-9b01c0e8792a",
+      "update_id": "6499c15f-a9ae-4e32-8bbd-9b01c0e8792a"
+    },
+    "sequence": {
+      "control_plane_seq_no": 1793631312161001,
+      "data_plane_id": {
+        "instance": "execution",
+        "seq_no": 1793631288098044
+      }
+    },
+    "timestamp": "2026-11-02T14:55:09.206Z"
+  },
+  {
+    "event_type": "flow_progress",
+    "id": "65f01a70-d6cd-11f1-a967-7a30648d51ab",
+    "level": "INFO",
+    "maturity_level": "STABLE",
+    "message": "Flow 'dfurg_febar_catalog.volta_industrial.note_risk_flags' is QUEUED.",
+    "origin": {
+      "cloud": "AWS",
+      "cluster_id": "1102-145436-p2qny8mn-v2n",
+      "flow_name": "dfurg_febar_catalog.volta_industrial.note_risk_flags",
+      "materialization_name": "dfurg_febar_catalog.volta_industrial.__materialization_mat_636ad93c_bfde_4b5e_a2f5_6b253e9ceffa_note_risk_flags_1",
+      "org_id": 7474660769753598,
+      "pipeline_id": "636ad93c-bfde-4b5e-a2f5-6b253e9ceffa",
+      "pipeline_name": "volta_plant_floor",
+      "region": "us-east-1",
+      "request_id": "6499c15f-a9ae-4e32-8bbd-9b01c0e8792a",
+      "update_id": "6499c15f-a9ae-4e32-8bbd-9b01c0e8792a"
+    },
+    "sequence": {
+      "control_plane_seq_no": 1793631312163001,
+      "data_plane_id": {
+        "instance": "execution",
+        "seq_no": 1793631288098045
+      }
+    },
+    "timestamp": "2026-11-02T14:55:09.207Z"
+  },
+  {
+    "event_type": "flow_progress",
+    "id": "65f2b280-d6cd-11f1-a967-7a30648d51ab",
+    "level": "INFO",
+    "maturity_level": "STABLE",
+    "message": "Flow 'dfurg_febar_catalog.volta_industrial.silver_work_orders' is PLANNING.",
+    "origin": {
+      "batch_id": 0,
+      "cloud": "AWS",
+      "cluster_id": "1102-145436-p2qny8mn-v2n",
+      "flow_name": "dfurg_febar_catalog.volta_industrial.silver_work_orders",
+      "materialization_name": "dfurg_febar_catalog.volta_industrial.__materialization_mat_636ad93c_bfde_4b5e_a2f5_6b253e9ceffa_silver_work_orders_1",
+      "org_id": 7474660769753598,
+      "pipeline_id": "636ad93c-bfde-4b5e-a2f5-6b253e9ceffa",
+      "pipeline_name": "volta_plant_floor",
+      "region": "us-east-1",
+      "request_id": "6499c15f-a9ae-4e32-8bbd-9b01c0e8792a",
+      "update_id": "6499c15f-a9ae-4e32-8bbd-9b01c0e8792a"
+    },
+    "sequence": {
+      "control_plane_seq_no": 1793631312165001,
+      "data_plane_id": {
+        "instance": "execution",
+        "seq_no": 1793631288098046
+      }
+    },
+    "timestamp": "2026-11-02T14:55:09.224Z"
+  },
+  {
+    "event_type": "flow_progress",
+    "id": "65f300a0-d6cd-11f1-a967-7a30648d51ab",
+    "level": "INFO",
+    "maturity_level": "STABLE",
+    "message": "Flow 'dfurg_febar_catalog.volta_industrial.note_risk_flags' is PLANNING.",
+    "origin": {
+      "batch_id": 0,
+      "cloud": "AWS",
+      "cluster_id": "1102-145436-p2qny8mn-v2n",
+      "flow_name": "dfurg_febar_catalog.volta_industrial.note_risk_flags",
+      "materialization_name": "dfurg_febar_catalog.volta_industrial.__materialization_mat_636ad93c_bfde_4b5e_a2f5_6b253e9ceffa_note_risk_flags_1",
+      "org_id": 7474660769753598,
+      "pipeline_id": "636ad93c-bfde-4b5e-a2f5-6b253e9ceffa",
+      "pipeline_name": "volta_plant_floor",
+      "region": "us-east-1",
+      "request_id": "6499c15f-a9ae-4e32-8bbd-9b01c0e8792a",
+      "update_id": "6499c15f-a9ae-4e32-8bbd-9b01c0e8792a"
+    },
+    "sequence": {
+      "control_plane_seq_no": 1793631312166001,
+      "data_plane_id": {
+        "instance": "execution",
+        "seq_no": 1793631288098047
+      }
+    },
+    "timestamp": "2026-11-02T14:55:09.226Z"
+  },
+  {
+    "event_type": "flow_progress",
+    "id": "65f34ec0-d6cd-11f1-a967-7a30648d51ab",
+    "level": "INFO",
+    "maturity_level": "STABLE",
+    "message": "Flow 'dfurg_febar_catalog.volta_industrial.silver_maintenance' is PLANNING.",
+    "origin": {
+      "batch_id": 0,
+      "cloud": "AWS",
+      "cluster_id": "1102-145436-p2qny8mn-v2n",
+      "flow_name": "dfurg_febar_catalog.volta_industrial.silver_maintenance",
+      "materialization_name": "dfurg_febar_catalog.volta_industrial.__materialization_mat_636ad93c_bfde_4b5e_a2f5_6b253e9ceffa_silver_maintenance_1",
+      "org_id": 7474660769753598,
+      "pipeline_id": "636ad93c-bfde-4b5e-a2f5-6b253e9ceffa",
+      "pipeline_name": "volta_plant_floor",
+      "region": "us-east-1",
+      "request_id": "6499c15f-a9ae-4e32-8bbd-9b01c0e8792a",
+      "update_id": "6499c15f-a9ae-4e32-8bbd-9b01c0e8792a"
+    },
+    "sequence": {
+      "control_plane_seq_no": 1793631312168001,
+      "data_plane_id": {
+        "instance": "execution",
+        "seq_no": 1793631288098048
+      }
+    },
+    "timestamp": "2026-11-02T14:55:09.228Z"
+  },
+  {
+    "event_type": "flow_progress",
+    "id": "65f375d0-d6cd-11f1-a967-7a30648d51ab",
+    "level": "INFO",
+    "maturity_level": "STABLE",
+    "message": "Flow 'dfurg_febar_catalog.volta_industrial.silver_telemetry' is PLANNING.",
+    "origin": {
+      "batch_id": 0,
+      "cloud": "AWS",
+      "cluster_id": "1102-145436-p2qny8mn-v2n",
+      "flow_name": "dfurg_febar_catalog.volta_industrial.silver_telemetry",
+      "materialization_name": "dfurg_febar_catalog.volta_industrial.__materialization_mat_636ad93c_bfde_4b5e_a2f5_6b253e9ceffa_silver_telemetry_1",
+      "org_id": 7474660769753598,
+      "pipeline_id": "636ad93c-bfde-4b5e-a2f5-6b253e9ceffa",
+      "pipeline_name": "volta_plant_floor",
+      "region": "us-east-1",
+      "request_id": "6499c15f-a9ae-4e32-8bbd-9b01c0e8792a",
+      "update_id": "6499c15f-a9ae-4e32-8bbd-9b01c0e8792a"
+    },
+    "sequence": {
+      "control_plane_seq_no": 1793631312170001,
+      "data_plane_id": {
+        "instance": "execution",
+        "seq_no": 1793631288098049
+      }
+    },
+    "timestamp": "2026-11-02T14:55:09.229Z"
+  },
+  {
+    "event_type": "planning_information",
+    "id": "6634eba0-d6cd-11f1-a967-7a30648d51ab",
+    "level": "INFO",
+    "maturity_level": "EVOLVING",
+    "message": "Flow 'dfurg_febar_catalog.volta_industrial.silver_maintenance' has been planned to be executed as COMPLETE_RECOMPUTE.",
+    "origin": {
+      "batch_id": 0,
+      "cloud": "AWS",
+      "cluster_id": "1102-145436-p2qny8mn-v2n",
+      "flow_id": "2638657b-96a7-4144-a7b6-bc2f94c3ce5d",
+      "flow_name": "dfurg_febar_catalog.volta_industrial.silver_maintenance",
+      "materialization_name": "dfurg_febar_catalog.volta_industrial.__materialization_mat_636ad93c_bfde_4b5e_a2f5_6b253e9ceffa_silver_maintenance_1",
+      "org_id": 7474660769753598,
+      "pipeline_id": "636ad93c-bfde-4b5e-a2f5-6b253e9ceffa",
+      "pipeline_name": "volta_plant_floor",
+      "region": "us-east-1",
+      "request_id": "6499c15f-a9ae-4e32-8bbd-9b01c0e8792a",
+      "update_id": "6499c15f-a9ae-4e32-8bbd-9b01c0e8792a"
+    },
+    "sequence": {
+      "control_plane_seq_no": 1793631312172001,
+      "data_plane_id": {
+        "instance": "execution",
+        "seq_no": 1793631288098050
+      }
+    },
+    "timestamp": "2026-11-02T14:55:09.658Z"
+  },
+  {
+    "event_type": "planning_information",
+    "id": "6638e340-d6cd-11f1-a967-7a30648d51ab",
+    "level": "INFO",
+    "maturity_level": "EVOLVING",
+    "message": "Flow 'dfurg_febar_catalog.volta_industrial.silver_work_orders' has been planned to be executed as COMPLETE_RECOMPUTE.",
+    "origin": {
+      "batch_id": 0,
+      "cloud": "AWS",
+      "cluster_id": "1102-145436-p2qny8mn-v2n",
+      "flow_id": "7f6d814a-d11a-405e-bcdb-d59a1360ef0d",
+      "flow_name": "dfurg_febar_catalog.volta_industrial.silver_work_orders",
+      "materialization_name": "dfurg_febar_catalog.volta_industrial.__materialization_mat_636ad93c_bfde_4b5e_a2f5_6b253e9ceffa_silver_work_orders_1",
+      "org_id": 7474660769753598,
+      "pipeline_id": "636ad93c-bfde-4b5e-a2f5-6b253e9ceffa",
+      "pipeline_name": "volta_plant_floor",
+      "region": "us-east-1",
+      "request_id": "6499c15f-a9ae-4e32-8bbd-9b01c0e8792a",
+      "update_id": "6499c15f-a9ae-4e32-8bbd-9b01c0e8792a"
+    },
+    "sequence": {
+      "control_plane_seq_no": 1793631312174001,
+      "data_plane_id": {
+        "instance": "execution",
+        "seq_no": 1793631288098051
+      }
+    },
+    "timestamp": "2026-11-02T14:55:09.684Z"
+  },
+  {
+    "event_type": "planning_information",
+    "id": "66395870-d6cd-11f1-a967-7a30648d51ab",
+    "level": "INFO",
+    "maturity_level": "EVOLVING",
+    "message": "Flow 'dfurg_febar_catalog.volta_industrial.silver_telemetry' has been planned to be executed as COMPLETE_RECOMPUTE.",
+    "origin": {
+      "batch_id": 0,
+      "cloud": "AWS",
+      "cluster_id": "1102-145436-p2qny8mn-v2n",
+      "flow_id": "05ff1000-61e0-4529-8cb3-686f4cd88305",
+      "flow_name": "dfurg_febar_catalog.volta_industrial.silver_telemetry",
+      "materialization_name": "dfurg_febar_catalog.volta_industrial.__materialization_mat_636ad93c_bfde_4b5e_a2f5_6b253e9ceffa_silver_telemetry_1",
+      "org_id": 7474660769753598,
+      "pipeline_id": "636ad93c-bfde-4b5e-a2f5-6b253e9ceffa",
+      "pipeline_name": "volta_plant_floor",
+      "region": "us-east-1",
+      "request_id": "6499c15f-a9ae-4e32-8bbd-9b01c0e8792a",
+      "update_id": "6499c15f-a9ae-4e32-8bbd-9b01c0e8792a"
+    },
+    "sequence": {
+      "control_plane_seq_no": 1793631312176001,
+      "data_plane_id": {
+        "instance": "execution",
+        "seq_no": 1793631288098052
+      }
+    },
+    "timestamp": "2026-11-02T14:55:09.687Z"
+  },
+  {
+    "event_type": "flow_progress",
+    "id": "6639a690-d6cd-11f1-a967-7a30648d51ab",
+    "level": "INFO",
+    "maturity_level": "STABLE",
+    "message": "Flow 'dfurg_febar_catalog.volta_industrial.silver_maintenance' is STARTING.",
+    "origin": {
+      "batch_id": 0,
+      "cloud": "AWS",
+      "cluster_id": "1102-145436-p2qny8mn-v2n",
+      "flow_id": "2638657b-96a7-4144-a7b6-bc2f94c3ce5d",
+      "flow_name": "dfurg_febar_catalog.volta_industrial.silver_maintenance",
+      "materialization_name": "dfurg_febar_catalog.volta_industrial.__materialization_mat_636ad93c_bfde_4b5e_a2f5_6b253e9ceffa_silver_maintenance_1",
+      "org_id": 7474660769753598,
+      "pipeline_id": "636ad93c-bfde-4b5e-a2f5-6b253e9ceffa",
+      "pipeline_name": "volta_plant_floor",
+      "region": "us-east-1",
+      "request_id": "6499c15f-a9ae-4e32-8bbd-9b01c0e8792a",
+      "update_id": "6499c15f-a9ae-4e32-8bbd-9b01c0e8792a"
+    },
+    "sequence": {
+      "control_plane_seq_no": 1793631312177001,
+      "data_plane_id": {
+        "instance": "execution",
+        "seq_no": 1793631288098053
+      }
+    },
+    "timestamp": "2026-11-02T14:55:09.689Z"
+  },
+  {
+    "event_type": "planning_information",
+    "id": "663e1360-d6cd-11f1-a967-7a30648d51ab",
+    "level": "INFO",
+    "maturity_level": "EVOLVING",
+    "message": "Flow 'dfurg_febar_catalog.volta_industrial.note_risk_flags' has been planned to be executed as COMPLETE_RECOMPUTE.",
+    "origin": {
+      "batch_id": 0,
+      "cloud": "AWS",
+      "cluster_id": "1102-145436-p2qny8mn-v2n",
+      "flow_id": "d02fc739-ed43-4d64-a86f-17b5ea6fc6dc",
+      "flow_name": "dfurg_febar_catalog.volta_industrial.note_risk_flags",
+      "materialization_name": "dfurg_febar_catalog.volta_industrial.__materialization_mat_636ad93c_bfde_4b5e_a2f5_6b253e9ceffa_note_risk_flags_1",
+      "org_id": 7474660769753598,
+      "pipeline_id": "636ad93c-bfde-4b5e-a2f5-6b253e9ceffa",
+      "pipeline_name": "volta_plant_floor",
+      "region": "us-east-1",
+      "request_id": "6499c15f-a9ae-4e32-8bbd-9b01c0e8792a",
+      "update_id": "6499c15f-a9ae-4e32-8bbd-9b01c0e8792a"
+    },
+    "sequence": {
+      "control_plane_seq_no": 1793631312179001,
+      "data_plane_id": {
+        "instance": "execution",
+        "seq_no": 1793631288098054
+      }
+    },
+    "timestamp": "2026-11-02T14:55:09.718Z"
+  },
+  {
+    "event_type": "flow_progress",
+    "id": "663f4be0-d6cd-11f1-a967-7a30648d51ab",
+    "level": "INFO",
+    "maturity_level": "STABLE",
+    "message": "Flow 'dfurg_febar_catalog.volta_industrial.silver_telemetry' is STARTING.",
+    "origin": {
+      "batch_id": 0,
+      "cloud": "AWS",
+      "cluster_id": "1102-145436-p2qny8mn-v2n",
+      "flow_id": "05ff1000-61e0-4529-8cb3-686f4cd88305",
+      "flow_name": "dfurg_febar_catalog.volta_industrial.silver_telemetry",
+      "materialization_name": "dfurg_febar_catalog.volta_industrial.__materialization_mat_636ad93c_bfde_4b5e_a2f5_6b253e9ceffa_silver_telemetry_1",
+      "org_id": 7474660769753598,
+      "pipeline_id": "636ad93c-bfde-4b5e-a2f5-6b253e9ceffa",
+      "pipeline_name": "volta_plant_floor",
+      "region": "us-east-1",
+      "request_id": "6499c15f-a9ae-4e32-8bbd-9b01c0e8792a",
+      "update_id": "6499c15f-a9ae-4e32-8bbd-9b01c0e8792a"
+    },
+    "sequence": {
+      "control_plane_seq_no": 1793631312181001,
+      "data_plane_id": {
+        "instance": "execution",
+        "seq_no": 1793631288098055
+      }
+    },
+    "timestamp": "2026-11-02T14:55:09.726Z"
+  },
+  {
+    "event_type": "flow_progress",
+    "id": "663fc110-d6cd-11f1-a967-7a30648d51ab",
+    "level": "INFO",
+    "maturity_level": "STABLE",
+    "message": "Flow 'dfurg_febar_catalog.volta_industrial.silver_work_orders' is STARTING.",
+    "origin": {
+      "batch_id": 0,
+      "cloud": "AWS",
+      "cluster_id": "1102-145436-p2qny8mn-v2n",
+      "flow_id": "7f6d814a-d11a-405e-bcdb-d59a1360ef0d",
+      "flow_name": "dfurg_febar_catalog.volta_industrial.silver_work_orders",
+      "materialization_name": "dfurg_febar_catalog.volta_industrial.__materialization_mat_636ad93c_bfde_4b5e_a2f5_6b253e9ceffa_silver_work_orders_1",
+      "org_id": 7474660769753598,
+      "pipeline_id": "636ad93c-bfde-4b5e-a2f5-6b253e9ceffa",
+      "pipeline_name": "volta_plant_floor",
+      "region": "us-east-1",
+      "request_id": "6499c15f-a9ae-4e32-8bbd-9b01c0e8792a",
+      "update_id": "6499c15f-a9ae-4e32-8bbd-9b01c0e8792a"
+    },
+    "sequence": {
+      "control_plane_seq_no": 1793631312183001,
+      "data_plane_id": {
+        "instance": "execution",
+        "seq_no": 1793631288098056
+      }
+    },
+    "timestamp": "2026-11-02T14:55:09.729Z"
+  },
+  {
+    "event_type": "flow_progress",
+    "id": "66405d50-d6cd-11f1-a967-7a30648d51ab",
+    "level": "INFO",
+    "maturity_level": "STABLE",
+    "message": "Flow 'dfurg_febar_catalog.volta_industrial.note_risk_flags' is STARTING.",
+    "origin": {
+      "batch_id": 0,
+      "cloud": "AWS",
+      "cluster_id": "1102-145436-p2qny8mn-v2n",
+      "flow_id": "d02fc739-ed43-4d64-a86f-17b5ea6fc6dc",
+      "flow_name": "dfurg_febar_catalog.volta_industrial.note_risk_flags",
+      "materialization_name": "dfurg_febar_catalog.volta_industrial.__materialization_mat_636ad93c_bfde_4b5e_a2f5_6b253e9ceffa_note_risk_flags_1",
+      "org_id": 7474660769753598,
+      "pipeline_id": "636ad93c-bfde-4b5e-a2f5-6b253e9ceffa",
+      "pipeline_name": "volta_plant_floor",
+      "region": "us-east-1",
+      "request_id": "6499c15f-a9ae-4e32-8bbd-9b01c0e8792a",
+      "update_id": "6499c15f-a9ae-4e32-8bbd-9b01c0e8792a"
+    },
+    "sequence": {
+      "control_plane_seq_no": 1793631312184001,
+      "data_plane_id": {
+        "instance": "execution",
+        "seq_no": 1793631288098057
+      }
+    },
+    "timestamp": "2026-11-02T14:55:09.733Z"
+  },
+  {
+    "event_type": "flow_progress",
+    "id": "664629b0-d6cd-11f1-a967-7a30648d51ab",
+    "level": "INFO",
+    "maturity_level": "STABLE",
+    "message": "Flow 'dfurg_febar_catalog.volta_industrial.silver_telemetry' is RUNNING.",
+    "origin": {
+      "batch_id": 0,
+      "cloud": "AWS",
+      "cluster_id": "1102-145436-p2qny8mn-v2n",
+      "flow_id": "05ff1000-61e0-4529-8cb3-686f4cd88305",
+      "flow_name": "dfurg_febar_catalog.volta_industrial.silver_telemetry",
+      "materialization_name": "dfurg_febar_catalog.volta_industrial.__materialization_mat_636ad93c_bfde_4b5e_a2f5_6b253e9ceffa_silver_telemetry_1",
+      "org_id": 7474660769753598,
+      "pipeline_id": "636ad93c-bfde-4b5e-a2f5-6b253e9ceffa",
+      "pipeline_name": "volta_plant_floor",
+      "region": "us-east-1",
+      "request_id": "6499c15f-a9ae-4e32-8bbd-9b01c0e8792a",
+      "update_id": "6499c15f-a9ae-4e32-8bbd-9b01c0e8792a"
+    },
+    "sequence": {
+      "control_plane_seq_no": 1793631312186001,
+      "data_plane_id": {
+        "instance": "execution",
+        "seq_no": 1793631288098058
+      }
+    },
+    "timestamp": "2026-11-02T14:55:09.771Z"
+  },
+  {
+    "event_type": "flow_progress",
+    "id": "6647b050-d6cd-11f1-a967-7a30648d51ab",
+    "level": "INFO",
+    "maturity_level": "STABLE",
+    "message": "Flow 'dfurg_febar_catalog.volta_industrial.silver_maintenance' is RUNNING.",
+    "origin": {
+      "batch_id": 0,
+      "cloud": "AWS",
+      "cluster_id": "1102-145436-p2qny8mn-v2n",
+      "flow_id": "2638657b-96a7-4144-a7b6-bc2f94c3ce5d",
+      "flow_name": "dfurg_febar_catalog.volta_industrial.silver_maintenance",
+      "materialization_name": "dfurg_febar_catalog.volta_industrial.__materialization_mat_636ad93c_bfde_4b5e_a2f5_6b253e9ceffa_silver_maintenance_1",
+      "org_id": 7474660769753598,
+      "pipeline_id": "636ad93c-bfde-4b5e-a2f5-6b253e9ceffa",
+      "pipeline_name": "volta_plant_floor",
+      "region": "us-east-1",
+      "request_id": "6499c15f-a9ae-4e32-8bbd-9b01c0e8792a",
+      "update_id": "6499c15f-a9ae-4e32-8bbd-9b01c0e8792a"
+    },
+    "sequence": {
+      "control_plane_seq_no": 1793631312188001,
+      "data_plane_id": {
+        "instance": "execution",
+        "seq_no": 1793631288098059
+      }
+    },
+    "timestamp": "2026-11-02T14:55:09.781Z"
+  },
+  {
+    "event_type": "flow_progress",
+    "id": "664a4860-d6cd-11f1-a967-7a30648d51ab",
+    "level": "INFO",
+    "maturity_level": "STABLE",
+    "message": "Flow 'dfurg_febar_catalog.volta_industrial.silver_work_orders' is RUNNING.",
+    "origin": {
+      "batch_id": 0,
+      "cloud": "AWS",
+      "cluster_id": "1102-145436-p2qny8mn-v2n",
+      "flow_id": "7f6d814a-d11a-405e-bcdb-d59a1360ef0d",
+      "flow_name": "dfurg_febar_catalog.volta_industrial.silver_work_orders",
+      "materialization_name": "dfurg_febar_catalog.volta_industrial.__materialization_mat_636ad93c_bfde_4b5e_a2f5_6b253e9ceffa_silver_work_orders_1",
+      "org_id": 7474660769753598,
+      "pipeline_id": "636ad93c-bfde-4b5e-a2f5-6b253e9ceffa",
+      "pipeline_name": "volta_plant_floor",
+      "region": "us-east-1",
+      "request_id": "6499c15f-a9ae-4e32-8bbd-9b01c0e8792a",
+      "update_id": "6499c15f-a9ae-4e32-8bbd-9b01c0e8792a"
+    },
+    "sequence": {
+      "control_plane_seq_no": 1793631312190001,
+      "data_plane_id": {
+        "instance": "execution",
+        "seq_no": 1793631288098060
+      }
+    },
+    "timestamp": "2026-11-02T14:55:09.798Z"
+  },
+  {
+    "event_type": "flow_progress",
+    "id": "664b0bb0-d6cd-11f1-a967-7a30648d51ab",
+    "level": "INFO",
+    "maturity_level": "STABLE",
+    "message": "Flow 'dfurg_febar_catalog.volta_industrial.note_risk_flags' is RUNNING.",
+    "origin": {
+      "batch_id": 0,
+      "cloud": "AWS",
+      "cluster_id": "1102-145436-p2qny8mn-v2n",
+      "flow_id": "d02fc739-ed43-4d64-a86f-17b5ea6fc6dc",
+      "flow_name": "dfurg_febar_catalog.volta_industrial.note_risk_flags",
+      "materialization_name": "dfurg_febar_catalog.volta_industrial.__materialization_mat_636ad93c_bfde_4b5e_a2f5_6b253e9ceffa_note_risk_flags_1",
+      "org_id": 7474660769753598,
+      "pipeline_id": "636ad93c-bfde-4b5e-a2f5-6b253e9ceffa",
+      "pipeline_name": "volta_plant_floor",
+      "region": "us-east-1",
+      "request_id": "6499c15f-a9ae-4e32-8bbd-9b01c0e8792a",
+      "update_id": "6499c15f-a9ae-4e32-8bbd-9b01c0e8792a"
+    },
+    "sequence": {
+      "control_plane_seq_no": 1793631312191001,
+      "data_plane_id": {
+        "instance": "execution",
+        "seq_no": 1793631288098061
+      }
+    },
+    "timestamp": "2026-11-02T14:55:09.803Z"
+  },
+  {
+    "event_type": "flow_progress",
+    "id": "6948e260-d6cd-11f1-a967-7a30648d51ab",
+    "level": "INFO",
+    "maturity_level": "STABLE",
+    "message": "Flow 'dfurg_febar_catalog.volta_industrial.silver_work_orders' has COMPLETED.",
+    "origin": {
+      "batch_id": 0,
+      "cloud": "AWS",
+      "cluster_id": "1102-145436-p2qny8mn-v2n",
+      "flow_id": "7f6d814a-d11a-405e-bcdb-d59a1360ef0d",
+      "flow_name": "dfurg_febar_catalog.volta_industrial.silver_work_orders",
+      "org_id": 7474660769753598,
+      "pipeline_id": "636ad93c-bfde-4b5e-a2f5-6b253e9ceffa",
+      "pipeline_name": "volta_plant_floor",
+      "region": "us-east-1",
+      "request_id": "6499c15f-a9ae-4e32-8bbd-9b01c0e8792a",
+      "update_id": "6499c15f-a9ae-4e32-8bbd-9b01c0e8792a"
+    },
+    "sequence": {
+      "control_plane_seq_no": 1793631315462001,
+      "data_plane_id": {
+        "instance": "execution",
+        "seq_no": 1793631288098064
+      }
+    },
+    "timestamp": "2026-11-02T14:55:14.822Z"
+  },
+  {
+    "event_type": "flow_progress",
+    "id": "69558c90-d6cd-11f1-a967-7a30648d51ab",
+    "level": "INFO",
+    "maturity_level": "STABLE",
+    "message": "Flow 'dfurg_febar_catalog.volta_industrial.silver_maintenance' has COMPLETED.",
+    "origin": {
+      "batch_id": 0,
+      "cloud": "AWS",
+      "cluster_id": "1102-145436-p2qny8mn-v2n",
+      "flow_id": "2638657b-96a7-4144-a7b6-bc2f94c3ce5d",
+      "flow_name": "dfurg_febar_catalog.volta_industrial.silver_maintenance",
+      "org_id": 7474660769753598,
+      "pipeline_id": "636ad93c-bfde-4b5e-a2f5-6b253e9ceffa",
+      "pipeline_name": "volta_plant_floor",
+      "region": "us-east-1",
+      "request_id": "6499c15f-a9ae-4e32-8bbd-9b01c0e8792a",
+      "update_id": "6499c15f-a9ae-4e32-8bbd-9b01c0e8792a"
+    },
+    "sequence": {
+      "control_plane_seq_no": 1793631315485001,
+      "data_plane_id": {
+        "instance": "execution",
+        "seq_no": 1793631288098065
+      }
+    },
+    "timestamp": "2026-11-02T14:55:14.905Z"
+  },
+  {
+    "event_type": "flow_progress",
+    "id": "69dd0c10-d6cd-11f1-a967-7a30648d51ab",
+    "level": "INFO",
+    "maturity_level": "STABLE",
+    "message": "Flow 'dfurg_febar_catalog.volta_industrial.gold_maintenance_outcomes' is PLANNING.",
+    "origin": {
+      "batch_id": 0,
+      "cloud": "AWS",
+      "cluster_id": "1102-145436-p2qny8mn-v2n",
+      "flow_name": "dfurg_febar_catalog.volta_industrial.gold_maintenance_outcomes",
+      "materialization_name": "dfurg_febar_catalog.volta_industrial.__materialization_mat_636ad93c_bfde_4b5e_a2f5_6b253e9ceffa_gold_maintenance_outcomes_1",
+      "org_id": 7474660769753598,
+      "pipeline_id": "636ad93c-bfde-4b5e-a2f5-6b253e9ceffa",
+      "pipeline_name": "volta_plant_floor",
+      "region": "us-east-1",
+      "request_id": "6499c15f-a9ae-4e32-8bbd-9b01c0e8792a",
+      "update_id": "6499c15f-a9ae-4e32-8bbd-9b01c0e8792a"
+    },
+    "sequence": {
+      "control_plane_seq_no": 1793631318742001,
+      "data_plane_id": {
+        "instance": "execution",
+        "seq_no": 1793631288098066
+      }
+    },
+    "timestamp": "2026-11-02T14:55:15.793Z"
+  },
+  {
+    "event_type": "planning_information",
+    "id": "700d36f0-d6cd-11f1-a967-7a30648d51ab",
+    "level": "INFO",
+    "maturity_level": "EVOLVING",
+    "message": "Flow 'dfurg_febar_catalog.volta_industrial.gold_maintenance_outcomes' has been planned to be executed as ROW_BASED.",
+    "origin": {
+      "batch_id": 0,
+      "cloud": "AWS",
+      "cluster_id": "1102-145436-p2qny8mn-v2n",
+      "flow_id": "52f8d9f6-9728-467a-9c5a-75360e251fed",
+      "flow_name": "dfurg_febar_catalog.volta_industrial.gold_maintenance_outcomes",
+      "materialization_name": "dfurg_febar_catalog.volta_industrial.__materialization_mat_636ad93c_bfde_4b5e_a2f5_6b253e9ceffa_gold_maintenance_outcomes_1",
+      "org_id": 7474660769753598,
+      "pipeline_id": "636ad93c-bfde-4b5e-a2f5-6b253e9ceffa",
+      "pipeline_name": "volta_plant_floor",
+      "region": "us-east-1",
+      "request_id": "6499c15f-a9ae-4e32-8bbd-9b01c0e8792a",
+      "update_id": "6499c15f-a9ae-4e32-8bbd-9b01c0e8792a"
+    },
+    "sequence": {
+      "control_plane_seq_no": 1793631327980001,
+      "data_plane_id": {
+        "instance": "execution",
+        "seq_no": 1793631288098069
+      }
+    },
+    "timestamp": "2026-11-02T14:55:26.175Z"
+  },
+  {
+    "event_type": "flow_progress",
+    "id": "700fa7f0-d6cd-11f1-a967-7a30648d51ab",
+    "level": "INFO",
+    "maturity_level": "STABLE",
+    "message": "Flow 'dfurg_febar_catalog.volta_industrial.gold_maintenance_outcomes' is STARTING.",
+    "origin": {
+      "batch_id": 0,
+      "cloud": "AWS",
+      "cluster_id": "1102-145436-p2qny8mn-v2n",
+      "flow_id": "52f8d9f6-9728-467a-9c5a-75360e251fed",
+      "flow_name": "dfurg_febar_catalog.volta_industrial.gold_maintenance_outcomes",
+      "materialization_name": "dfurg_febar_catalog.volta_industrial.__materialization_mat_636ad93c_bfde_4b5e_a2f5_6b253e9ceffa_gold_maintenance_outcomes_1",
+      "org_id": 7474660769753598,
+      "pipeline_id": "636ad93c-bfde-4b5e-a2f5-6b253e9ceffa",
+      "pipeline_name": "volta_plant_floor",
+      "region": "us-east-1",
+      "request_id": "6499c15f-a9ae-4e32-8bbd-9b01c0e8792a",
+      "update_id": "6499c15f-a9ae-4e32-8bbd-9b01c0e8792a"
+    },
+    "sequence": {
+      "control_plane_seq_no": 1793631327982001,
+      "data_plane_id": {
+        "instance": "execution",
+        "seq_no": 1793631288098070
+      }
+    },
+    "timestamp": "2026-11-02T14:55:26.191Z"
+  },
+  {
+    "event_type": "flow_progress",
+    "id": "70128e20-d6cd-11f1-a967-7a30648d51ab",
+    "level": "INFO",
+    "maturity_level": "STABLE",
+    "message": "Flow 'dfurg_febar_catalog.volta_industrial.gold_maintenance_outcomes' is RUNNING.",
+    "origin": {
+      "batch_id": 0,
+      "cloud": "AWS",
+      "cluster_id": "1102-145436-p2qny8mn-v2n",
+      "flow_id": "52f8d9f6-9728-467a-9c5a-75360e251fed",
+      "flow_name": "dfurg_febar_catalog.volta_industrial.gold_maintenance_outcomes",
+      "materialization_name": "dfurg_febar_catalog.volta_industrial.__materialization_mat_636ad93c_bfde_4b5e_a2f5_6b253e9ceffa_gold_maintenance_outcomes_1",
+      "org_id": 7474660769753598,
+      "pipeline_id": "636ad93c-bfde-4b5e-a2f5-6b253e9ceffa",
+      "pipeline_name": "volta_plant_floor",
+      "region": "us-east-1",
+      "request_id": "6499c15f-a9ae-4e32-8bbd-9b01c0e8792a",
+      "update_id": "6499c15f-a9ae-4e32-8bbd-9b01c0e8792a"
+    },
+    "sequence": {
+      "control_plane_seq_no": 1793631327984001,
+      "data_plane_id": {
+        "instance": "execution",
+        "seq_no": 1793631288098071
+      }
+    },
+    "timestamp": "2026-11-02T14:55:26.210Z"
+  },
+  {
+    "event_type": "flow_progress",
+    "id": "71447e70-d6cd-11f1-a967-7a30648d51ab",
+    "level": "INFO",
+    "maturity_level": "STABLE",
+    "message": "Flow 'dfurg_febar_catalog.volta_industrial.silver_telemetry' has COMPLETED.",
+    "origin": {
+      "batch_id": 0,
+      "cloud": "AWS",
+      "cluster_id": "1102-145436-p2qny8mn-v2n",
+      "flow_id": "05ff1000-61e0-4529-8cb3-686f4cd88305",
+      "flow_name": "dfurg_febar_catalog.volta_industrial.silver_telemetry",
+      "org_id": 7474660769753598,
+      "pipeline_id": "636ad93c-bfde-4b5e-a2f5-6b253e9ceffa",
+      "pipeline_name": "volta_plant_floor",
+      "region": "us-east-1",
+      "request_id": "6499c15f-a9ae-4e32-8bbd-9b01c0e8792a",
+      "update_id": "6499c15f-a9ae-4e32-8bbd-9b01c0e8792a"
+    },
+    "sequence": {
+      "control_plane_seq_no": 1793631331134001,
+      "data_plane_id": {
+        "instance": "execution",
+        "seq_no": 1793631288098072
+      }
+    },
+    "timestamp": "2026-11-02T14:55:28.215Z"
+  },
+  {
+    "event_type": "flow_progress",
+    "id": "715e6f10-d6cd-11f1-a967-7a30648d51ab",
+    "level": "INFO",
+    "maturity_level": "STABLE",
+    "message": "Flow 'dfurg_febar_catalog.volta_industrial.note_risk_flags' has COMPLETED.",
+    "origin": {
+      "batch_id": 0,
+      "cloud": "AWS",
+      "cluster_id": "1102-145436-p2qny8mn-v2n",
+      "flow_id": "d02fc739-ed43-4d64-a86f-17b5ea6fc6dc",
+      "flow_name": "dfurg_febar_catalog.volta_industrial.note_risk_flags",
+      "org_id": 7474660769753598,
+      "pipeline_id": "636ad93c-bfde-4b5e-a2f5-6b253e9ceffa",
+      "pipeline_name": "volta_plant_floor",
+      "region": "us-east-1",
+      "request_id": "6499c15f-a9ae-4e32-8bbd-9b01c0e8792a",
+      "update_id": "6499c15f-a9ae-4e32-8bbd-9b01c0e8792a"
+    },
+    "sequence": {
+      "control_plane_seq_no": 1793631331136001,
+      "data_plane_id": {
+        "instance": "execution",
+        "seq_no": 1793631288098073
+      }
+    },
+    "timestamp": "2026-11-02T14:55:28.385Z"
+  },
+  {
+    "event_type": "flow_progress",
+    "id": "71de2660-d6cd-11f1-a967-7a30648d51ab",
+    "level": "INFO",
+    "maturity_level": "STABLE",
+    "message": "Flow 'dfurg_febar_catalog.volta_industrial.silver_risk' is PLANNING.",
+    "origin": {
+      "batch_id": 0,
+      "cloud": "AWS",
+      "cluster_id": "1102-145436-p2qny8mn-v2n",
+      "flow_name": "dfurg_febar_catalog.volta_industrial.silver_risk",
+      "materialization_name": "dfurg_febar_catalog.volta_industrial.__materialization_mat_636ad93c_bfde_4b5e_a2f5_6b253e9ceffa_silver_risk_1",
+      "org_id": 7474660769753598,
+      "pipeline_id": "636ad93c-bfde-4b5e-a2f5-6b253e9ceffa",
+      "pipeline_name": "volta_plant_floor",
+      "region": "us-east-1",
+      "request_id": "6499c15f-a9ae-4e32-8bbd-9b01c0e8792a",
+      "update_id": "6499c15f-a9ae-4e32-8bbd-9b01c0e8792a"
+    },
+    "sequence": {
+      "control_plane_seq_no": 1793631331138001,
+      "data_plane_id": {
+        "instance": "execution",
+        "seq_no": 1793631288098077
+      }
+    },
+    "timestamp": "2026-11-02T14:55:29.222Z"
+  },
+  {
+    "event_type": "planning_information",
+    "id": "72d382e0-d6cd-11f1-a967-7a30648d51ab",
+    "level": "INFO",
+    "maturity_level": "EVOLVING",
+    "message": "Flow 'dfurg_febar_catalog.volta_industrial.silver_risk' has been planned to be executed as COMPLETE_RECOMPUTE.",
+    "origin": {
+      "batch_id": 0,
+      "cloud": "AWS",
+      "cluster_id": "1102-145436-p2qny8mn-v2n",
+      "flow_id": "2c565846-c88b-4236-bb71-60c1534331c9",
+      "flow_name": "dfurg_febar_catalog.volta_industrial.silver_risk",
+      "materialization_name": "dfurg_febar_catalog.volta_industrial.__materialization_mat_636ad93c_bfde_4b5e_a2f5_6b253e9ceffa_silver_risk_1",
+      "org_id": 7474660769753598,
+      "pipeline_id": "636ad93c-bfde-4b5e-a2f5-6b253e9ceffa",
+      "pipeline_name": "volta_plant_floor",
+      "region": "us-east-1",
+      "request_id": "6499c15f-a9ae-4e32-8bbd-9b01c0e8792a",
+      "update_id": "6499c15f-a9ae-4e32-8bbd-9b01c0e8792a"
+    },
+    "sequence": {
+      "control_plane_seq_no": 1793631331145001,
+      "data_plane_id": {
+        "instance": "execution",
+        "seq_no": 1793631288098079
+      }
+    },
+    "timestamp": "2026-11-02T14:55:30.830Z"
+  },
+  {
+    "event_type": "flow_progress",
+    "id": "72d3f810-d6cd-11f1-a967-7a30648d51ab",
+    "level": "INFO",
+    "maturity_level": "STABLE",
+    "message": "Flow 'dfurg_febar_catalog.volta_industrial.silver_risk' is STARTING.",
+    "origin": {
+      "batch_id": 0,
+      "cloud": "AWS",
+      "cluster_id": "1102-145436-p2qny8mn-v2n",
+      "flow_id": "2c565846-c88b-4236-bb71-60c1534331c9",
+      "flow_name": "dfurg_febar_catalog.volta_industrial.silver_risk",
+      "materialization_name": "dfurg_febar_catalog.volta_industrial.__materialization_mat_636ad93c_bfde_4b5e_a2f5_6b253e9ceffa_silver_risk_1",
+      "org_id": 7474660769753598,
+      "pipeline_id": "636ad93c-bfde-4b5e-a2f5-6b253e9ceffa",
+      "pipeline_name": "volta_plant_floor",
+      "region": "us-east-1",
+      "request_id": "6499c15f-a9ae-4e32-8bbd-9b01c0e8792a",
+      "update_id": "6499c15f-a9ae-4e32-8bbd-9b01c0e8792a"
+    },
+    "sequence": {
+      "control_plane_seq_no": 1793631331147001,
+      "data_plane_id": {
+        "instance": "execution",
+        "seq_no": 1793631288098080
+      }
+    },
+    "timestamp": "2026-11-02T14:55:30.833Z"
+  },
+  {
+    "event_type": "flow_progress",
+    "id": "72e201d0-d6cd-11f1-a967-7a30648d51ab",
+    "level": "INFO",
+    "maturity_level": "STABLE",
+    "message": "Flow 'dfurg_febar_catalog.volta_industrial.silver_risk' is RUNNING.",
+    "origin": {
+      "batch_id": 0,
+      "cloud": "AWS",
+      "cluster_id": "1102-145436-p2qny8mn-v2n",
+      "flow_id": "2c565846-c88b-4236-bb71-60c1534331c9",
+      "flow_name": "dfurg_febar_catalog.volta_industrial.silver_risk",
+      "materialization_name": "dfurg_febar_catalog.volta_industrial.__materialization_mat_636ad93c_bfde_4b5e_a2f5_6b253e9ceffa_silver_risk_1",
+      "org_id": 7474660769753598,
+      "pipeline_id": "636ad93c-bfde-4b5e-a2f5-6b253e9ceffa",
+      "pipeline_name": "volta_plant_floor",
+      "region": "us-east-1",
+      "request_id": "6499c15f-a9ae-4e32-8bbd-9b01c0e8792a",
+      "update_id": "6499c15f-a9ae-4e32-8bbd-9b01c0e8792a"
+    },
+    "sequence": {
+      "control_plane_seq_no": 1793631331149001,
+      "data_plane_id": {
+        "instance": "execution",
+        "seq_no": 1793631288098081
+      }
+    },
+    "timestamp": "2026-11-02T14:55:30.925Z"
+  },
+  {
+    "event_type": "flow_progress",
+    "id": "73f8f010-d6cd-11f1-a967-7a30648d51ab",
+    "level": "INFO",
+    "maturity_level": "STABLE",
+    "message": "Flow 'dfurg_febar_catalog.volta_industrial.gold_maintenance_outcomes' has COMPLETED.",
+    "origin": {
+      "batch_id": 0,
+      "cloud": "AWS",
+      "cluster_id": "1102-145436-p2qny8mn-v2n",
+      "flow_id": "52f8d9f6-9728-467a-9c5a-75360e251fed",
+      "flow_name": "dfurg_febar_catalog.volta_industrial.gold_maintenance_outcomes",
+      "org_id": 7474660769753598,
+      "pipeline_id": "636ad93c-bfde-4b5e-a2f5-6b253e9ceffa",
+      "pipeline_name": "volta_plant_floor",
+      "region": "us-east-1",
+      "request_id": "6499c15f-a9ae-4e32-8bbd-9b01c0e8792a",
+      "update_id": "6499c15f-a9ae-4e32-8bbd-9b01c0e8792a"
+    },
+    "sequence": {
+      "control_plane_seq_no": 1793631334392001,
+      "data_plane_id": {
+        "instance": "execution",
+        "seq_no": 1793631288098083
+      }
+    },
+    "timestamp": "2026-11-02T14:55:32.753Z"
+  },
+  {
+    "event_type": "flow_progress",
+    "id": "74b0ce60-d6cd-11f1-a967-7a30648d51ab",
+    "level": "INFO",
+    "maturity_level": "STABLE",
+    "message": "Flow 'dfurg_febar_catalog.volta_industrial.silver_risk' has COMPLETED.",
+    "origin": {
+      "batch_id": 0,
+      "cloud": "AWS",
+      "cluster_id": "1102-145436-p2qny8mn-v2n",
+      "flow_id": "2c565846-c88b-4236-bb71-60c1534331c9",
+      "flow_name": "dfurg_febar_catalog.volta_industrial.silver_risk",
+      "org_id": 7474660769753598,
+      "pipeline_id": "636ad93c-bfde-4b5e-a2f5-6b253e9ceffa",
+      "pipeline_name": "volta_plant_floor",
+      "region": "us-east-1",
+      "request_id": "6499c15f-a9ae-4e32-8bbd-9b01c0e8792a",
+      "update_id": "6499c15f-a9ae-4e32-8bbd-9b01c0e8792a"
+    },
+    "sequence": {
+      "control_plane_seq_no": 1793631334394001,
+      "data_plane_id": {
+        "instance": "execution",
+        "seq_no": 1793631288098084
+      }
+    },
+    "timestamp": "2026-11-02T14:55:33.958Z"
+  },
+  {
+    "event_type": "flow_progress",
+    "id": "74b1dfd0-d6cd-11f1-a967-7a30648d51ab",
+    "level": "INFO",
+    "maturity_level": "STABLE",
+    "message": "Flow 'dfurg_febar_catalog.volta_industrial.gold_line_status' is PLANNING.",
+    "origin": {
+      "batch_id": 0,
+      "cloud": "AWS",
+      "cluster_id": "1102-145436-p2qny8mn-v2n",
+      "flow_name": "dfurg_febar_catalog.volta_industrial.gold_line_status",
+      "materialization_name": "dfurg_febar_catalog.volta_industrial.__materialization_mat_636ad93c_bfde_4b5e_a2f5_6b253e9ceffa_gold_line_status_1",
+      "org_id": 7474660769753598,
+      "pipeline_id": "636ad93c-bfde-4b5e-a2f5-6b253e9ceffa",
+      "pipeline_name": "volta_plant_floor",
+      "region": "us-east-1",
+      "request_id": "6499c15f-a9ae-4e32-8bbd-9b01c0e8792a",
+      "update_id": "6499c15f-a9ae-4e32-8bbd-9b01c0e8792a"
+    },
+    "sequence": {
+      "control_plane_seq_no": 1793631334395001,
+      "data_plane_id": {
+        "instance": "execution",
+        "seq_no": 1793631288098085
+      }
+    },
+    "timestamp": "2026-11-02T14:55:33.965Z"
+  },
+  {
+    "event_type": "planning_information",
+    "id": "7719b810-d6cd-11f1-a967-7a30648d51ab",
+    "level": "INFO",
+    "maturity_level": "EVOLVING",
+    "message": "Flow 'dfurg_febar_catalog.volta_industrial.gold_line_status' has been planned to be executed as COMPLETE_RECOMPUTE.",
+    "origin": {
+      "batch_id": 0,
+      "cloud": "AWS",
+      "cluster_id": "1102-145436-p2qny8mn-v2n",
+      "flow_id": "6a89c485-897c-44e7-84b3-d92b4996af80",
+      "flow_name": "dfurg_febar_catalog.volta_industrial.gold_line_status",
+      "materialization_name": "dfurg_febar_catalog.volta_industrial.__materialization_mat_636ad93c_bfde_4b5e_a2f5_6b253e9ceffa_gold_line_status_1",
+      "org_id": 7474660769753598,
+      "pipeline_id": "636ad93c-bfde-4b5e-a2f5-6b253e9ceffa",
+      "pipeline_name": "volta_plant_floor",
+      "region": "us-east-1",
+      "request_id": "6499c15f-a9ae-4e32-8bbd-9b01c0e8792a",
+      "update_id": "6499c15f-a9ae-4e32-8bbd-9b01c0e8792a"
+    },
+    "sequence": {
+      "control_plane_seq_no": 1793631340645001,
+      "data_plane_id": {
+        "instance": "execution",
+        "seq_no": 1793631288098086
+      }
+    },
+    "timestamp": "2026-11-02T14:55:38.001Z"
+  },
+  {
+    "event_type": "flow_progress",
+    "id": "771af090-d6cd-11f1-a967-7a30648d51ab",
+    "level": "INFO",
+    "maturity_level": "STABLE",
+    "message": "Flow 'dfurg_febar_catalog.volta_industrial.gold_line_status' is STARTING.",
+    "origin": {
+      "batch_id": 0,
+      "cloud": "AWS",
+      "cluster_id": "1102-145436-p2qny8mn-v2n",
+      "flow_id": "6a89c485-897c-44e7-84b3-d92b4996af80",
+      "flow_name": "dfurg_febar_catalog.volta_industrial.gold_line_status",
+      "materialization_name": "dfurg_febar_catalog.volta_industrial.__materialization_mat_636ad93c_bfde_4b5e_a2f5_6b253e9ceffa_gold_line_status_1",
+      "org_id": 7474660769753598,
+      "pipeline_id": "636ad93c-bfde-4b5e-a2f5-6b253e9ceffa",
+      "pipeline_name": "volta_plant_floor",
+      "region": "us-east-1",
+      "request_id": "6499c15f-a9ae-4e32-8bbd-9b01c0e8792a",
+      "update_id": "6499c15f-a9ae-4e32-8bbd-9b01c0e8792a"
+    },
+    "sequence": {
+      "control_plane_seq_no": 1793631340647001,
+      "data_plane_id": {
+        "instance": "execution",
+        "seq_no": 1793631288098087
+      }
+    },
+    "timestamp": "2026-11-02T14:55:38.009Z"
+  },
+  {
+    "event_type": "flow_progress",
+    "id": "772ddc50-d6cd-11f1-a967-7a30648d51ab",
+    "level": "INFO",
+    "maturity_level": "STABLE",
+    "message": "Flow 'dfurg_febar_catalog.volta_industrial.gold_line_status' is RUNNING.",
+    "origin": {
+      "batch_id": 0,
+      "cloud": "AWS",
+      "cluster_id": "1102-145436-p2qny8mn-v2n",
+      "flow_id": "6a89c485-897c-44e7-84b3-d92b4996af80",
+      "flow_name": "dfurg_febar_catalog.volta_industrial.gold_line_status",
+      "materialization_name": "dfurg_febar_catalog.volta_industrial.__materialization_mat_636ad93c_bfde_4b5e_a2f5_6b253e9ceffa_gold_line_status_1",
+      "org_id": 7474660769753598,
+      "pipeline_id": "636ad93c-bfde-4b5e-a2f5-6b253e9ceffa",
+      "pipeline_name": "volta_plant_floor",
+      "region": "us-east-1",
+      "request_id": "6499c15f-a9ae-4e32-8bbd-9b01c0e8792a",
+      "update_id": "6499c15f-a9ae-4e32-8bbd-9b01c0e8792a"
+    },
+    "sequence": {
+      "control_plane_seq_no": 1793631340649001,
+      "data_plane_id": {
+        "instance": "execution",
+        "seq_no": 1793631288098088
+      }
+    },
+    "timestamp": "2026-11-02T14:55:38.133Z"
+  },
+  {
+    "event_type": "flow_progress",
+    "id": "7a0df1d0-d6cd-11f1-a967-7a30648d51ab",
+    "level": "INFO",
+    "maturity_level": "STABLE",
+    "message": "Flow 'dfurg_febar_catalog.volta_industrial.gold_line_status' has COMPLETED.",
+    "origin": {
+      "batch_id": 0,
+      "cloud": "AWS",
+      "cluster_id": "1102-145436-p2qny8mn-v2n",
+      "flow_id": "6a89c485-897c-44e7-84b3-d92b4996af80",
+      "flow_name": "dfurg_febar_catalog.volta_industrial.gold_line_status",
+      "org_id": 7474660769753598,
+      "pipeline_id": "636ad93c-bfde-4b5e-a2f5-6b253e9ceffa",
+      "pipeline_name": "volta_plant_floor",
+      "region": "us-east-1",
+      "request_id": "6499c15f-a9ae-4e32-8bbd-9b01c0e8792a",
+      "update_id": "6499c15f-a9ae-4e32-8bbd-9b01c0e8792a"
+    },
+    "sequence": {
+      "control_plane_seq_no": 1793631343846001,
+      "data_plane_id": {
+        "instance": "execution",
+        "seq_no": 1793631288098090
+      }
+    },
+    "timestamp": "2026-11-02T14:55:42.957Z"
+  },
+  {
+    "event_type": "flow_progress",
+    "id": "7a0edc30-d6cd-11f1-a967-7a30648d51ab",
+    "level": "INFO",
+    "maturity_level": "STABLE",
+    "message": "Flow 'dfurg_febar_catalog.volta_industrial.gold_open_atrisk' is PLANNING.",
+    "origin": {
+      "batch_id": 0,
+      "cloud": "AWS",
+      "cluster_id": "1102-145436-p2qny8mn-v2n",
+      "flow_name": "dfurg_febar_catalog.volta_industrial.gold_open_atrisk",
+      "materialization_name": "dfurg_febar_catalog.volta_industrial.__materialization_mat_636ad93c_bfde_4b5e_a2f5_6b253e9ceffa_gold_open_atrisk_1",
+      "org_id": 7474660769753598,
+      "pipeline_id": "636ad93c-bfde-4b5e-a2f5-6b253e9ceffa",
+      "pipeline_name": "volta_plant_floor",
+      "region": "us-east-1",
+      "request_id": "6499c15f-a9ae-4e32-8bbd-9b01c0e8792a",
+      "update_id": "6499c15f-a9ae-4e32-8bbd-9b01c0e8792a"
+    },
+    "sequence": {
+      "control_plane_seq_no": 1793631343850001,
+      "data_plane_id": {
+        "instance": "execution",
+        "seq_no": 1793631288098091
+      }
+    },
+    "timestamp": "2026-11-02T14:55:42.963Z"
+  },
+  {
+    "event_type": "planning_information",
+    "id": "7cb0b030-d6cd-11f1-a967-7a30648d51ab",
+    "level": "INFO",
+    "maturity_level": "EVOLVING",
+    "message": "Flow 'dfurg_febar_catalog.volta_industrial.gold_open_atrisk' has been planned to be executed as ROW_BASED.",
+    "origin": {
+      "batch_id": 0,
+      "cloud": "AWS",
+      "cluster_id": "1102-145436-p2qny8mn-v2n",
+      "flow_id": "8f17bc8b-f822-4aa8-986a-164a9fda9443",
+      "flow_name": "dfurg_febar_catalog.volta_industrial.gold_open_atrisk",
+      "materialization_name": "dfurg_febar_catalog.volta_industrial.__materialization_mat_636ad93c_bfde_4b5e_a2f5_6b253e9ceffa_gold_open_atrisk_1",
+      "org_id": 7474660769753598,
+      "pipeline_id": "636ad93c-bfde-4b5e-a2f5-6b253e9ceffa",
+      "pipeline_name": "volta_plant_floor",
+      "region": "us-east-1",
+      "request_id": "6499c15f-a9ae-4e32-8bbd-9b01c0e8792a",
+      "update_id": "6499c15f-a9ae-4e32-8bbd-9b01c0e8792a"
+    },
+    "sequence": {
+      "control_plane_seq_no": 1793631350035001,
+      "data_plane_id": {
+        "instance": "execution",
+        "seq_no": 1793631288098093
+      }
+    },
+    "timestamp": "2026-11-02T14:55:47.379Z"
+  },
+  {
+    "event_type": "flow_progress",
+    "id": "7cb12560-d6cd-11f1-a967-7a30648d51ab",
+    "level": "INFO",
+    "maturity_level": "STABLE",
+    "message": "Flow 'dfurg_febar_catalog.volta_industrial.gold_open_atrisk' is STARTING.",
+    "origin": {
+      "batch_id": 0,
+      "cloud": "AWS",
+      "cluster_id": "1102-145436-p2qny8mn-v2n",
+      "flow_id": "8f17bc8b-f822-4aa8-986a-164a9fda9443",
+      "flow_name": "dfurg_febar_catalog.volta_industrial.gold_open_atrisk",
+      "materialization_name": "dfurg_febar_catalog.volta_industrial.__materialization_mat_636ad93c_bfde_4b5e_a2f5_6b253e9ceffa_gold_open_atrisk_1",
+      "org_id": 7474660769753598,
+      "pipeline_id": "636ad93c-bfde-4b5e-a2f5-6b253e9ceffa",
+      "pipeline_name": "volta_plant_floor",
+      "region": "us-east-1",
+      "request_id": "6499c15f-a9ae-4e32-8bbd-9b01c0e8792a",
+      "update_id": "6499c15f-a9ae-4e32-8bbd-9b01c0e8792a"
+    },
+    "sequence": {
+      "control_plane_seq_no": 1793631350037001,
+      "data_plane_id": {
+        "instance": "execution",
+        "seq_no": 1793631288098094
+      }
+    },
+    "timestamp": "2026-11-02T14:55:47.382Z"
+  },
+  {
+    "event_type": "flow_progress",
+    "id": "7cb236d0-d6cd-11f1-a967-7a30648d51ab",
+    "level": "INFO",
+    "maturity_level": "STABLE",
+    "message": "Flow 'dfurg_febar_catalog.volta_industrial.gold_open_atrisk' is RUNNING.",
+    "origin": {
+      "batch_id": 0,
+      "cloud": "AWS",
+      "cluster_id": "1102-145436-p2qny8mn-v2n",
+      "flow_id": "8f17bc8b-f822-4aa8-986a-164a9fda9443",
+      "flow_name": "dfurg_febar_catalog.volta_industrial.gold_open_atrisk",
+      "materialization_name": "dfurg_febar_catalog.volta_industrial.__materialization_mat_636ad93c_bfde_4b5e_a2f5_6b253e9ceffa_gold_open_atrisk_1",
+      "org_id": 7474660769753598,
+      "pipeline_id": "636ad93c-bfde-4b5e-a2f5-6b253e9ceffa",
+      "pipeline_name": "volta_plant_floor",
+      "region": "us-east-1",
+      "request_id": "6499c15f-a9ae-4e32-8bbd-9b01c0e8792a",
+      "update_id": "6499c15f-a9ae-4e32-8bbd-9b01c0e8792a"
+    },
+    "sequence": {
+      "control_plane_seq_no": 1793631350039001,
+      "data_plane_id": {
+        "instance": "execution",
+        "seq_no": 1793631288098095
+      }
+    },
+    "timestamp": "2026-11-02T14:55:47.389Z"
+  },
+  {
+    "event_type": "flow_progress",
+    "id": "7e9d8c10-d6cd-11f1-a967-7a30648d51ab",
+    "level": "INFO",
+    "maturity_level": "STABLE",
+    "message": "Flow 'dfurg_febar_catalog.volta_industrial.gold_open_atrisk' has COMPLETED.",
+    "origin": {
+      "batch_id": 0,
+      "cloud": "AWS",
+      "cluster_id": "1102-145436-p2qny8mn-v2n",
+      "flow_id": "8f17bc8b-f822-4aa8-986a-164a9fda9443",
+      "flow_name": "dfurg_febar_catalog.volta_industrial.gold_open_atrisk",
+      "org_id": 7474660769753598,
+      "pipeline_id": "636ad93c-bfde-4b5e-a2f5-6b253e9ceffa",
+      "pipeline_name": "volta_plant_floor",
+      "region": "us-east-1",
+      "request_id": "6499c15f-a9ae-4e32-8bbd-9b01c0e8792a",
+      "update_id": "6499c15f-a9ae-4e32-8bbd-9b01c0e8792a"
+    },
+    "sequence": {
+      "control_plane_seq_no": 1793631353184001,
+      "data_plane_id": {
+        "instance": "execution",
+        "seq_no": 1793631288098119
+      }
+    },
+    "timestamp": "2026-11-02T14:55:50.609Z"
+  },
+  {
+    "event_type": "update_progress",
+    "id": "7ea1f8e0-d6cd-11f1-a967-7a30648d51ab",
+    "level": "INFO",
+    "maturity_level": "STABLE",
+    "message": "Update 6499c1 is COMPLETED.",
+    "origin": {
+      "cloud": "AWS",
+      "cluster_id": "1102-145436-p2qny8mn-v2n",
+      "org_id": 7474660769753598,
+      "pipeline_id": "636ad93c-bfde-4b5e-a2f5-6b253e9ceffa",
+      "pipeline_name": "volta_plant_floor",
+      "region": "us-east-1",
+      "request_id": "6499c15f-a9ae-4e32-8bbd-9b01c0e8792a",
+      "update_id": "6499c15f-a9ae-4e32-8bbd-9b01c0e8792a"
+    },
+    "sequence": {
+      "control_plane_seq_no": 1793631353190001,
+      "data_plane_id": {
+        "instance": "execution",
+        "seq_no": 1793631288098122
+      }
+    },
+    "timestamp": "2026-11-02T14:55:50.638Z"
+  }
+]
